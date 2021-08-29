@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularMaterialModule } from '../../angular-material/angular-material.module'
 
 @Component({
   selector: 'app-login',
