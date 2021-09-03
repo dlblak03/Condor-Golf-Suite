@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularMaterialModule } from '../../angular-material/angular-material.module'
+import { AngularMaterialModule } from '../../angular-material/angular-material.module';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +7,8 @@ import { AngularMaterialModule } from '../../angular-material/angular-material.m
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  hide = true;
 
   constructor() { }
 

@@ -1,5 +1,23 @@
 <div class="loginWrapper">
   <div class="loginItem">
-    <mat-card>Login Works</mat-card>
+    <mat-card>
+      <h1>Member Login</h1>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Username</mat-label>
+        <input matInput type="text">
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="legacy">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-hint align="end">Forgot Password?</mat-hint>
+      </mat-form-field>
+      <br><br>
+      <button mat-flat-button color="primary" style="width: 100%;">Login</button>
+    </mat-card>
   </div>
 </div>
