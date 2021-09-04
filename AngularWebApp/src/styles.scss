@@ -1,7 +1,7 @@
 /**
 * Generated theme by Material Theme Generator
 * https://materialtheme.arcsine.dev
-* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzM1NGY1MiIsIj9lcjwjYzJjYWNiIiwiO2VyPCMyMjM2Mzh$LCIlPmBePCM4NGE5OGMiLCI~ZXI8I2RhZTVkZCIsIjtlcjwjNjc4ZjZmfiwid2Fybj5gXjwjZTYzOTQ2IiwiP2VyPCNmOGM0YzgiLCI7ZXI8I2RiMjQyZn4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz5mYWxzZSwidmVyc2lvbj4xMn0=
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzJmNDg1OCIsIj9lcjwjYzFjOGNkIiwiO2VyPCMxZDMwM2R$LCIlPmBePCM3NWFlNDciLCI~ZXI8I2Q2ZTdjOCIsIjtlcjwjNTg5NDJmfiwid2Fybj5gXjwjZTYzOTQ2IiwiP2VyPCNmOGM0YzgiLCI7ZXI8I2RiMjQyZn4sIj9UZXh0PCMwMDAwMDAiLCI~PTwjZmFmYWZhIiwiO1RleHQ8I2ZmZmZmZiIsIjs9PCMyYzJjMmN$LCJmb250cz5bYEA8KC00fixgQDwoLTN$LGBAPCgtMn4sYEA8KC0xfixgQDxoZWFkbGluZX4sYEA8dGl0bGV$LGBAPHN1YiktMn4sYEA8c3ViKS0xfixgQDxib2R5LTJ$LGBAPGJvZHktMX4sYEA8YnV0dG9ufixgQDxjYXB0aW9ufixgQDxpbnB1dCIsInNpemU$bnVsbH1dLCJpY29uczxGaWxsZWQiLCI~bmVzcz5mYWxzZSwidmVyc2lvbj4xMn0=
 */
 
 @use '~@angular/material' as mat;
@@ -149,18 +149,18 @@ $mat-dark-theme-background: (
 // Theme Config
 
 body {
-  --primary-color: #354f52;
-  --primary-lighter-color: #c2cacb;
-  --primary-darker-color: #223638;
+  --primary-color: #2f4858;
+  --primary-lighter-color: #c1c8cd;
+  --primary-darker-color: #1d303d;
   --text-primary-color: #{$light-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
   --text-primary-darker-color: #{$light-primary-text};
 }
 $mat-primary: (
-  main: #354f52,
-  lighter: #c2cacb,
-  darker: #223638,
-  200: #354f52, // For slide toggle,
+  main: #2f4858,
+  lighter: #c1c8cd,
+  darker: #1d303d,
+  200: #2f4858, // For slide toggle,
   contrast : (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -170,18 +170,18 @@ $mat-primary: (
 $theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
 
 body {
-  --accent-color: #84a98c;
-  --accent-lighter-color: #dae5dd;
-  --accent-darker-color: #678f6f;
+  --accent-color: #75ae47;
+  --accent-lighter-color: #d6e7c8;
+  --accent-darker-color: #58942f;
   --text-accent-color: #{$dark-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$light-primary-text};
 }
 $mat-accent: (
-  main: #84a98c,
-  lighter: #dae5dd,
-  darker: #678f6f,
-  200: #84a98c, // For slide toggle,
+  main: #75ae47,
+  lighter: #d6e7c8,
+  darker: #58942f,
+  200: #75ae47, // For slide toggle,
   contrast : (
     main: $dark-primary-text,
     lighter: $dark-primary-text,
@@ -229,10 +229,10 @@ $altTheme: (
 );
 
 // Theme Init
-@include mat.all-component-themes($altTheme);
+@include mat.all-component-themes($theme);
 
 .theme-alternate {
-  @include mat.all-component-themes($theme);
+  @include mat.all-component-themes($altTheme);
 }
 
 // Specific component overrides, pieces that are not in line with the general theming
@@ -256,4 +256,8 @@ $altTheme: (
   .mat-badge-content {
     font-family: 'Roboto';
   }
+}
+
+.spacer {
+  flex: 1 1 auto;
 }

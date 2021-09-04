@@ -8,11 +8,15 @@ import { SettingsModule } from './settings/settings.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TopNavComponent } from './templates/top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
