@@ -10,10 +10,23 @@
   align-items: center;
   padding-left: 25px;
   padding-right: 25px;
+  padding-top: 10px;
 }
 
 .side-nav-top-icon-right {
   margin-left: auto;
+}
+
+.side-nav-image {
+  width: 90px;
+  height: 90px;
+  align-self: center;
+}
+
+.side-nav-name {
+  align-self: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .side-nav-middle {
@@ -22,6 +35,12 @@
   padding-right: 50px;
   display: flex;
   flex-direction: column;
+}
+
+.side-nav-menu-link {
+  margin-left: 40px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
 }
 
 .side-nav-bottom {
@@ -34,7 +53,8 @@
 a {
   width: 100%;
   text-align: left;
-  padding: 5px 20px 5px 25px;
+  padding: 3px 20px 3px 25px;
+  margin-bottom: 5px;
 }
 
 .mat-button.custom-hover:hover {
@@ -43,4 +63,14 @@ a {
 
 .mat-button.custom-hover.round:hover {
   border-radius: 50px;
+}
+
+.active {
+  background: white;
+  color: #2f4858;
+  border-radius: 50px;
+}
+
+.active:hover {
+  background: white !important;
 }

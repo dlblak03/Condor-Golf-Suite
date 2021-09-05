@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  search = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clearSearch() {
+    this.search = !this.search;
   }
 
 }

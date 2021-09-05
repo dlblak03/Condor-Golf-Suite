@@ -14,6 +14,7 @@ import { MenuWidgetComponent } from './templates/menu-widget/menu-widget.compone
 import { TeeSheetComponent } from './pages/tee-sheet/tee-sheet.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { SearchBarComponent } from './templates/search-bar/search-bar.component';
+import { ReportsComponent } from './pages/reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchBarComponent } from './templates/search-bar/search-bar.component'
     MenuWidgetComponent,
     TeeSheetComponent,
     PlayersComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,

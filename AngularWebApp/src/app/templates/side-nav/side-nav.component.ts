@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
+  name = 'The Crossings Golf Club';
+  status = 'Active'
+
   constructor() { }
 
   ngOnInit(): void {
