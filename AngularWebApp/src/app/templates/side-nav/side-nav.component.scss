@@ -61,8 +61,23 @@ a {
   background: rgba(255, 255, 255, 0.07);
 }
 
-.mat-button.custom-hover.round:hover {
+.mat-button.round:hover {
   border-radius: 50px;
+}
+
+.mat-button.custom-icon-hover {
+  width: 25px !important;
+  height: 25px;
+  min-width: 25px !important;
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-button.custom-icon-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .active {

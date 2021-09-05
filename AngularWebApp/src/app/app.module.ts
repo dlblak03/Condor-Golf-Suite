@@ -15,6 +15,9 @@ import { TeeSheetComponent } from './pages/tee-sheet/tee-sheet.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { SearchBarComponent } from './templates/search-bar/search-bar.component';
 import { ReportsComponent } from './pages/reports/reports.component';
+import { BillingComponent } from './pages/billing/billing.component';
+import { MembersComponent } from './pages/members/members.component';
+import { EventsComponent } from './pages/events/events.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ReportsComponent } from './pages/reports/reports.component';
     TeeSheetComponent,
     PlayersComponent,
     SearchBarComponent,
-    ReportsComponent
+    ReportsComponent,
+    BillingComponent,
+    MembersComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
