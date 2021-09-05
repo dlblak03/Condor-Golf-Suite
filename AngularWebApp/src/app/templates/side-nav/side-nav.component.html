@@ -1,0 +1,41 @@
+<div class="side-nav" [class.mat-elevation-z8]="true">
+
+  <div class="side-nav-top">
+    <div>
+      <mat-icon>golf_course</mat-icon>
+    </div>
+    <div class="side-nav-top-icon-right">
+      <mat-icon>notifications</mat-icon>
+    </div>
+  </div>
+
+  <div class="side-nav-middle">
+    <br>
+    <a mat-button style="background: #75ae47;" class="custom-hover"  [class.mat-elevation-z2]="true">
+      <font style="margin-right: 30px; font-size: 20px; letter-spacing: 0.03em;">Create Tee Time</font>
+      <mat-icon>add</mat-icon>
+    </a>
+    <br>
+    <br>
+    <h3 style="padding-left: 25px; font-size: 18px; letter-spacing: 0.2em; margin-bottom: 10px;">MENU</h3>
+    <a mat-button class="custom-hover round" routerLink="/dashboard">
+      <mat-icon>home</mat-icon>
+      <font style="margin-left: 30px; font-size: 20px; letter-spacing: 0.03em;">Home</font>
+    </a>
+    <a mat-button class="custom-hover round" routerLink="/teesheet">
+      <mat-icon>date_range</mat-icon>
+      <font style="margin-left: 30px; font-size: 20px; letter-spacing: 0.03em;">Tee Sheet</font>
+    </a>
+    <a mat-button class="custom-hover round" routerLink="/players">
+      <mat-icon>group</mat-icon>
+      <font style="margin-left: 30px; font-size: 20px; letter-spacing: 0.03em;">Players</font>
+    </a>
+  </div>
+
+  <div class="side-nav-bottom">
+    <a mat-button class="custom-hover round" routerLink="/login">
+      <mat-icon>power_settings_new</mat-icon>
+      <font style="margin-left: 30px; font-size: 20px; letter-spacing: 0.03em;">Log out</font>
+    </a>
+  </div>
+</div>

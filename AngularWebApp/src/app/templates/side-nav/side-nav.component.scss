@@ -1,0 +1,46 @@
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.side-nav-top {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.side-nav-top-icon-right {
+  margin-left: auto;
+}
+
+.side-nav-middle {
+  flex-grow: 1;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-nav-bottom {
+  height: 80px;
+  margin-top: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+a {
+  width: 100%;
+  text-align: left;
+  padding: 5px 20px 5px 25px;
+}
+
+.mat-button.custom-hover:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.mat-button.custom-hover.round:hover {
+  border-radius: 50px;
+}

@@ -9,13 +9,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TopNavComponent } from './templates/top-nav/top-nav.component';
+import { SideNavComponent } from './templates/side-nav/side-nav.component';
+import { MenuWidgetComponent } from './templates/menu-widget/menu-widget.component';
+import { TeeSheetComponent } from './pages/tee-sheet/tee-sheet.component';
+import { PlayersComponent } from './pages/players/players.component';
+import { SearchBarComponent } from './templates/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    TopNavComponent
+    TopNavComponent,
+    SideNavComponent,
+    MenuWidgetComponent,
+    TeeSheetComponent,
+    PlayersComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

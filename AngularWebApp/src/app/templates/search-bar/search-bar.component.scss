@@ -1,0 +1,17 @@
+.search-bar-wrapper {
+  height: 50px;
+}
+
+.search-bar {
+  white-space: nowrap;
+  display: inline-flex;
+  width: 100%;
+}
+
+.mat-button.circle {
+  height: 40px;
+  width: 40px !important;
+  min-width: 30px !important;
+  border-radius: 50px;
+  padding: 0px;
+}
