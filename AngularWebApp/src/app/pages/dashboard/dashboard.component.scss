@@ -1,1 +1,21 @@
+.row {
+  display: flex;
+}
 
+.row-one-item {
+  flex-grow: 1;
+  padding-left: 15px;
+  padding-right: 10px;
+}
+
+.center {
+  align-items: center;
+}
+
+.circle {
+  height: 40px;
+  width: 40px !important;
+  min-width: 30px !important;
+  border-radius: 50px;
+  padding: 0px;
+}

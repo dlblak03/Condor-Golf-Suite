@@ -229,7 +229,7 @@ $altTheme: (
 );
 
 // Theme Init
-@include mat.all-component-themes($altTheme);
+@include mat.all-component-themes($theme);
 
 .theme-alternate {
   @include mat.all-component-themes($theme);
@@ -285,6 +285,11 @@ $altTheme: (
   .side-nav-wrapper {
     display: none;
   }
+
+  .body-wrapper {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }
 
 .body-wrapper {
@@ -293,4 +298,16 @@ $altTheme: (
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 3px;
+}
+
+.mat-menu-panel {
+  margin-bottom: 10px !important;
+}
+
+.page-title {
+  padding-left: 15px;
+}
+
+.mat-display-1 {
+  margin-bottom: 30px !important;
 }

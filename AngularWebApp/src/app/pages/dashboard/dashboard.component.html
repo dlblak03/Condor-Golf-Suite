@@ -6,6 +6,46 @@
   </div>
   <div class="body-wrapper">
     <app-search-bar></app-search-bar>
+    <br>
+    <div class="page-title">
+      <h1 class="mat-display-1">Dashboard</h1>
+    </div>
+    <div class="row">
+      <div class="row-one-item">
+        <mat-card [class.mat-elevation-z2]="true">
+          <div class="row center">
+            <div class="">
+              <mat-icon>date_range</mat-icon>
+            </div>
+            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; margin-top: 1px;">
+              Tee Times
+            </div>
+            <div style="margin-left: auto;">
+              <button mat-button class="circle">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div class="row-one-item">
+        <mat-card [class.mat-elevation-z2]="true">
+          <div class="row center">
+            <div class="">
+              <mat-icon>nights_stay</mat-icon>
+            </div>
+            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; margin-top: 1px;">
+              Weather
+            </div>
+            <div style="margin-left: auto;">
+              <button mat-button class="circle">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
   </div>
 
   <app-menu-widget></app-menu-widget>
