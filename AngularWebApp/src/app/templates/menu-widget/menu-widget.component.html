@@ -1,5 +1,19 @@
 <div class="menu-widget-wrapper">
-  <button mat-fab color="accent">
+  <button mat-fab color="primary" [matMenuTriggerFor]="aboveMenu">
     <mat-icon>add</mat-icon>
   </button>
+<mat-menu #aboveMenu="matMenu" yPosition="above" xPosition="before" style="margin-bottom: 10px;">
+  <button mat-menu-item color="accent">
+    <mat-icon>date_range</mat-icon>
+    <span>Create Tee Time</span>
+  </button>
+  <button mat-menu-item color="accent">
+    <mat-icon>group</mat-icon>
+    <span>Add Player</span>
+  </button>
+  <button mat-menu-item color="accent">
+    <mat-icon>event</mat-icon>
+    <span>Add Event</span>
+  </button>
+</mat-menu>
 </div>

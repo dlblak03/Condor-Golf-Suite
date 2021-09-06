@@ -8,6 +8,7 @@ import { ReportsComponent } from './pages/reports/reports.component';
 import { BillingComponent } from './pages/billing/billing.component';
 import { MembersComponent } from './pages/members/members.component';
 import { EventsComponent } from './pages/events/events.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'billing', component: BillingComponent},
   {path: 'members', component: MembersComponent},
   {path: 'events', component: EventsComponent},
+  {path: 'settings', component: SettingsComponent},
 ];
 
 @NgModule({
