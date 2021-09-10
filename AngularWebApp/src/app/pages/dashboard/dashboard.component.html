@@ -14,14 +14,14 @@
       <div class="row-one-item">
         <mat-card [class.mat-elevation-z2]="true">
           <div class="row center">
-            <div class="">
+            <div style="line-height: 40px; display: flex;">
               <mat-icon>date_range</mat-icon>
             </div>
-            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; margin-top: 1px;">
+            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; line-height: 40px;">
               Tee Times
             </div>
             <div style="margin-left: auto;">
-              <button mat-button class="circle">
+              <button mat-icon-button class="circle">
                 <mat-icon>more_vert</mat-icon>
               </button>
             </div>
@@ -31,16 +31,52 @@
       <div class="row-one-item">
         <mat-card [class.mat-elevation-z2]="true">
           <div class="row center">
-            <div class="">
+            <div style="line-height: 40px; display: flex;">
               <mat-icon>nights_stay</mat-icon>
             </div>
-            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; margin-top: 1px;">
+            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; line-height: 40px;">
               Weather
             </div>
             <div style="margin-left: auto;">
-              <button mat-button class="circle">
+              <button mat-icon-button class="circle">
                 <mat-icon>more_vert</mat-icon>
               </button>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 20px;">
+            <div style="min-width: 80px;">
+              <mat-icon style="font-size: 85px; color: #ffe066;">circle</mat-icon>
+            </div>
+            <div class="weather-column" style="margin-left: 30px;">
+              <div class="mat-display-3" style="margin-bottom: 0px;">
+                {{WeatherData.temp_celcius}}°
+              </div>
+              <div class="mat-h3">
+                {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°
+              </div>
+            </div>
+            <div class="weather-column" style="margin-left: 10px; padding-top: 3px;">
+              <div>
+                Feels Like: {{WeatherData.temp_feels}}°
+              </div>
+              <div>
+                Humidity: {{WeatherData.humidity}}%
+              </div>
+              <div>
+                Wind: 5 km/h
+              </div>
+            </div>
+            <div class="weather-column" style="margin-left: auto; align-items: flex-end; padding-right: 5px;">
+              <div class="mat-h1" style="margin-bottom: 0px;">
+                Louisville, KY
+              </div>
+              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px;">
+                Thursday 8:00 PM
+              </div>
+              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px;">
+                Sunny
+              </div>
             </div>
           </div>
         </mat-card>
