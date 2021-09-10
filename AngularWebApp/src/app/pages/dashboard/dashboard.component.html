@@ -50,21 +50,21 @@
             </div>
             <div class="weather-column" style="margin-left: 30px;">
               <div class="mat-display-3" style="margin-bottom: 0px;">
-                {{WeatherData.temp_celcius}}°
+                {{WeatherDataCurrent.temp_celcius}}°
               </div>
               <div class="mat-h3">
-                {{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°
+                {{WeatherDataCurrent.temp_min_celcius}}° / {{WeatherDataCurrent.temp_max_celcius}}°
               </div>
             </div>
             <div class="weather-column" style="margin-left: 10px; padding-top: 3px;">
               <div>
-                Feels Like: {{WeatherData.temp_feels}}°
+                Feels Like: {{WeatherDataCurrent.temp_feels_celcius}}°
               </div>
               <div>
-                Humidity: {{WeatherData.humidity}}%
+                Humidity: {{WeatherDataCurrent.humidity}}%
               </div>
               <div>
-                Wind: 5 km/h
+                Wind: {{WeatherDataCurrent.wind}} mph
               </div>
             </div>
             <div class="weather-column" style="margin-left: auto; align-items: flex-end; padding-right: 5px;">
@@ -72,10 +72,10 @@
                 Louisville, KY
               </div>
               <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px;">
-                Thursday 8:00 PM
+                {{WeatherDataCurrent.day}} {{WeatherDataCurrent.time}}
               </div>
-              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px;">
-                Sunny
+              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">
+                {{WeatherDataCurrent.description}}
               </div>
             </div>
           </div>
