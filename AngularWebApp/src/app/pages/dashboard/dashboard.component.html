@@ -1,84 +1,40 @@
 <app-top-nav></app-top-nav>
 
 <div class="content-wrapper">
+  <!-- Side Nav Bar -->
   <div class="side-nav-wrapper">
     <app-side-nav></app-side-nav>
   </div>
-  <div class="body-wrapper">
+
+  <!-- Main Form Content -->
+  <div class="body-wrapper container-fluid">
+    <!-- Search Bar -->
     <app-search-bar></app-search-bar>
     <br>
+
+    <!-- Page Title -->
     <div class="page-title">
       <h1 class="mat-display-1">Dashboard</h1>
     </div>
+
+    <!-- Row 1 -->
     <div class="row">
-      <div class="row-one-item">
+      <!-- Column 1 -->
+      <div class="col-md">
         <mat-card [class.mat-elevation-z2]="true">
-          <div class="row center">
-            <div style="line-height: 40px; display: flex;">
-              <mat-icon>date_range</mat-icon>
-            </div>
-            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; line-height: 40px;">
-              Tee Times
-            </div>
-            <div style="margin-left: auto;">
-              <button mat-icon-button class="circle">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-            </div>
-          </div>
+
         </mat-card>
       </div>
-      <div class="row-one-item">
+      <!-- Column 2 -->
+      <div class="col-md">
         <mat-card [class.mat-elevation-z2]="true">
-          <div class="row center">
-            <div style="line-height: 40px; display: flex;">
-              <mat-icon>nights_stay</mat-icon>
-            </div>
-            <div class="mat-h1" style="margin-bottom: 0px; align-self: baseline; margin-left: 10px; line-height: 40px;">
-              Weather
-            </div>
-            <div style="margin-left: auto;">
-              <button mat-icon-button class="circle">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-            </div>
-          </div>
 
-          <div class="row" style="margin-top: 20px;">
-            <div style="min-width: 80px;">
-              <mat-icon style="font-size: 85px; color: #ffe066;">circle</mat-icon>
-            </div>
-            <div class="weather-column" style="margin-left: 30px;">
-              <div class="mat-display-3" style="margin-bottom: 0px;">
-                {{WeatherDataCurrent.temp_celcius}}°
-              </div>
-              <div class="mat-h3">
-                {{WeatherDataCurrent.temp_min_celcius}}° / {{WeatherDataCurrent.temp_max_celcius}}°
-              </div>
-            </div>
-            <div class="weather-column" style="margin-left: 10px; padding-top: 3px;">
-              <div>
-                Feels Like: {{WeatherDataCurrent.temp_feels_celcius}}°
-              </div>
-              <div>
-                Humidity: {{WeatherDataCurrent.humidity}}%
-              </div>
-              <div>
-                Wind: {{WeatherDataCurrent.wind}} mph
-              </div>
-            </div>
-            <div class="weather-column" style="margin-left: auto; align-items: flex-end; padding-right: 5px;">
-              <div class="mat-h1" style="margin-bottom: 0px;">
-                Louisville, KY
-              </div>
-              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px;">
-                {{WeatherDataCurrent.day}} {{WeatherDataCurrent.time}}
-              </div>
-              <div class="mat-h3" style="margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">
-                {{WeatherDataCurrent.description}}
-              </div>
-            </div>
-          </div>
+        </mat-card>
+      </div>
+      <!-- Column 3 -->
+      <div class="col-xl">
+        <mat-card [class.mat-elevation-z2]="true">
+
         </mat-card>
       </div>
     </div>
