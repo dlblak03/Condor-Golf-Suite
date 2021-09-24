@@ -19,6 +19,7 @@ import { BillingComponent } from './pages/billing/billing.component';
 import { MembersComponent } from './pages/members/members.component';
 import { EventsComponent } from './pages/events/events.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SettingsComponent } from './pages/settings/settings.component';
     BillingComponent,
     MembersComponent,
     EventsComponent,
-    SettingsComponent
+    SettingsComponent,
+    CommunityComponent
   ],
   imports: [
     BrowserModule,

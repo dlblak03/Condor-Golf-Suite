@@ -9,6 +9,7 @@ import { BillingComponent } from './pages/billing/billing.component';
 import { MembersComponent } from './pages/members/members.component';
 import { EventsComponent } from './pages/events/events.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'members', component: MembersComponent},
   {path: 'events', component: EventsComponent},
   {path: 'settings', component: SettingsComponent},
+  {path: 'community', component: CommunityComponent},
 ];
 
 @NgModule({
