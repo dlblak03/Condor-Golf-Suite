@@ -20,6 +20,7 @@ import { MembersComponent } from './pages/members/members.component';
 import { EventsComponent } from './pages/events/events.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { CommunityComponent } from './pages/community/community.component';
+import { TopBarComponent } from './templates/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CommunityComponent } from './pages/community/community.component';
     MembersComponent,
     EventsComponent,
     SettingsComponent,
-    CommunityComponent
+    CommunityComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,

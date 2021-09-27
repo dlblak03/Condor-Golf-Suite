@@ -230,7 +230,7 @@ $altTheme: (
 );
 
 // Theme Init
-@include mat.all-component-themes($theme);
+@include mat.all-component-themes($altTheme);
 
 .theme-alternate {
   @include mat.all-component-themes($theme);
@@ -277,8 +277,8 @@ $altTheme: (
 
 .side-nav-wrapper {
   background: #2f4858;
-  width: 350px;
-  min-width: 350px;
+  width: 275px;
+  min-width: 275px;
   color: #fff;
 }
 
@@ -316,8 +316,8 @@ a:hover {
 }
 @media screen and (min-width: 600px) {
   .container-fluid {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 // End Bootstrap overrides

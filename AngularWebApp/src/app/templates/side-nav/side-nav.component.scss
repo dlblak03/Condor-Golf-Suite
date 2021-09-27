@@ -4,15 +4,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #2f4858;;
 }
 
 .side-nav-top {
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 10px;
 }
 
 .side-nav-top-icon-right {
@@ -20,29 +18,40 @@
 }
 
 .side-nav-image {
-  width: 90px;
-  height: 90px;
-  align-self: center;
+  width: 70px;
+  height: 70px;
 }
 
 .side-nav-name {
-  align-self: center;
-  margin-top: 10px;
-  text-align: center;
+margin-left: 20px;
 }
 
 .side-nav-middle {
-  flex-grow: 1;
-  padding-left: 50px;
-  padding-right: 50px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
 }
 
 .side-nav-menu-link {
-  margin-left: 40px;
+  margin-left: 20px;
   font-size: 16px;
   letter-spacing: 0.05em;
+  color: #ffffff;
+}
+
+.active .side-nav-menu-link {
+  margin-left: 20px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #2f4858 !important;
+}
+
+.icon-color {
+  color: #ffffff;
+}
+
+.active .icon-color {
+  color: #2f4858 !important;
 }
 
 .side-nav-bottom {
@@ -89,8 +98,7 @@ a {
 
 .active {
   background: white;
-  color: #2f4858;
-  border-radius: 50px;
+  color: #2f4858 !important;
 }
 
 .active:hover {

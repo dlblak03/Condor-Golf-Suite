@@ -7,156 +7,155 @@
   </div>
 
   <!-- Main Form Content -->
-  <div class="body-wrapper container-fluid">
+  <div class="container-fluid">
     <!-- Search Bar -->
     <!-- <app-search-bar></app-search-bar> -->
+    <app-top-bar></app-top-bar>
     <br>
 
-    <!-- Page Title -->
-    <div class="row">
-      <div class="col">
-        <h1 class="mat-display-1">Dashboard</h1>
+    <div class="main-content">
+      <!-- Page Title -->
+      <!-- <div class="row">
+        <div class="col">
+          <h1 class="mat-display-1">Dashboard</h1>
+        </div>
+        <div class="col-auto" style="padding-right: 0px;">
+          <button mat-button class="circle">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Row 1 -->
+      <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+          <!-- Row 1 -->
+          <div class="row mb-3">
+            <div class="col">
+              <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+                <!-- Title Row -->
+                <div class="row">
+                  <!-- Title Icon -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <mat-icon>nights_stay</mat-icon>
+                  </div>
+                  <!-- Title Text -->
+                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                    <h2 style="font-weight: 400; margin-bottom: 0px;">Weather</h2>
+                  </div>
+                  <!-- Title More Settings -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <button mat-button class="circle">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="row mb-3">
+            <div class="col">
+              <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+                <!-- Title Row -->
+                <div class="row">
+                  <!-- Title Icon -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <mat-icon>date_range</mat-icon>
+                  </div>
+                  <!-- Title Text -->
+                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                    <h2 style="font-weight: 400; margin-bottom: 0px;">Tee Sheet</h2>
+                  </div>
+                  <!-- Title More Settings -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <button mat-button class="circle">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+          <!-- Row 1 -->
+          <div class="row mb-3">
+            <div class="col">
+              <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+                <!-- Title Row -->
+                <div class="row">
+                  <!-- Title Icon -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <mat-icon>group</mat-icon>
+                  </div>
+                  <!-- Title Text -->
+                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                    <h2 style="font-weight: 400; margin-bottom: 0px;">Players</h2>
+                  </div>
+                  <!-- Title More Settings -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <button mat-button class="circle">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="row mb-3">
+            <div class="col">
+              <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+                <!-- Title Row -->
+                <div class="row">
+                  <!-- Title Icon -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <mat-icon>event</mat-icon>
+                  </div>
+                  <!-- Title Text -->
+                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                    <h2 style="font-weight: 400; margin-bottom: 0px;">Events</h2>
+                  </div>
+                  <!-- Title More Settings -->
+                  <div class="col-auto" style="display: flex; align-items: center;">
+                    <button mat-button class="circle">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </mat-card>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-auto" style="padding-right: 0px;">
-        <button mat-button class="circle">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-      <div class="col-auto" style="padding-left: 0px;">
-        <button mat-button class="circle" routerLink='/settings'>
-          <mat-icon>settings</mat-icon>
-        </button>
+
+      <!-- Row 2 -->
+      <div class="row">
+        <div class="col">
+          <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+            <!-- Title Row -->
+            <div class="row">
+              <!-- Title Icon -->
+              <div class="col-auto" style="display: flex; align-items: center;">
+                <mat-icon>description</mat-icon>
+              </div>
+              <!-- Title Text -->
+              <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                <h2 style="font-weight: 400; margin-bottom: 0px;">Reports</h2>
+              </div>
+              <!-- Title More Settings -->
+              <div class="col-auto" style="display: flex; align-items: center;">
+                <button mat-button class="circle">
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+              </div>
+            </div>
+          </mat-card>
+        </div>
       </div>
     </div>
 
-    <!-- Row 1 -->
-    <div class="row">
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <!-- Row 1 -->
-        <div class="row mb-3">
-          <div class="col">
-            <mat-card [class.mat-elevation-z2]="true">
-              <!-- Title Row -->
-              <div class="row">
-                <!-- Title Icon -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <mat-icon>nights_stay</mat-icon>
-                </div>
-                <!-- Title Text -->
-                <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                  <h2 style="font-weight: 400; margin-bottom: 0px;">Weather</h2>
-                </div>
-                <!-- Title More Settings -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <button mat-button class="circle">
-                    <mat-icon>more_vert</mat-icon>
-                  </button>
-                </div>
-              </div>
-            </mat-card>
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="row mb-3">
-          <div class="col">
-            <mat-card [class.mat-elevation-z2]="true">
-              <!-- Title Row -->
-              <div class="row">
-                <!-- Title Icon -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <mat-icon>date_range</mat-icon>
-                </div>
-                <!-- Title Text -->
-                <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                  <h2 style="font-weight: 400; margin-bottom: 0px;">Tee Sheet</h2>
-                </div>
-                <!-- Title More Settings -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <button mat-button class="circle">
-                    <mat-icon>more_vert</mat-icon>
-                  </button>
-                </div>
-              </div>
-            </mat-card>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-        <!-- Row 1 -->
-        <div class="row mb-3">
-          <div class="col">
-            <mat-card [class.mat-elevation-z2]="true">
-              <!-- Title Row -->
-              <div class="row">
-                <!-- Title Icon -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <mat-icon>group</mat-icon>
-                </div>
-                <!-- Title Text -->
-                <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                  <h2 style="font-weight: 400; margin-bottom: 0px;">Players</h2>
-                </div>
-                <!-- Title More Settings -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <button mat-button class="circle">
-                    <mat-icon>more_vert</mat-icon>
-                  </button>
-                </div>
-              </div>
-            </mat-card>
-          </div>
-        </div>
-        <!-- Row 2 -->
-        <div class="row mb-3">
-          <div class="col">
-            <mat-card [class.mat-elevation-z2]="true">
-              <!-- Title Row -->
-              <div class="row">
-                <!-- Title Icon -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <mat-icon>event</mat-icon>
-                </div>
-                <!-- Title Text -->
-                <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                  <h2 style="font-weight: 400; margin-bottom: 0px;">Events</h2>
-                </div>
-                <!-- Title More Settings -->
-                <div class="col-auto" style="display: flex; align-items: center;">
-                  <button mat-button class="circle">
-                    <mat-icon>more_vert</mat-icon>
-                  </button>
-                </div>
-              </div>
-            </mat-card>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="row">
-      <div class="col">
-        <mat-card [class.mat-elevation-z2]="true">
-          <!-- Title Row -->
-          <div class="row">
-            <!-- Title Icon -->
-            <div class="col-auto" style="display: flex; align-items: center;">
-              <mat-icon>description</mat-icon>
-            </div>
-            <!-- Title Text -->
-            <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-              <h2 style="font-weight: 400; margin-bottom: 0px;">Reports</h2>
-            </div>
-            <!-- Title More Settings -->
-            <div class="col-auto" style="display: flex; align-items: center;">
-              <button mat-button class="circle">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-            </div>
-          </div>
-        </mat-card>
-      </div>
-    </div>
   </div>
 
   <app-menu-widget></app-menu-widget>
