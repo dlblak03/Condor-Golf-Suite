@@ -37,7 +37,7 @@
                 <div class="row">
                   <!-- Title Icon -->
                   <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon>nights_stay</mat-icon>
+                    <mat-icon color="primary">nights_stay</mat-icon>
                   </div>
                   <!-- Title Text -->
                   <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
@@ -50,6 +50,29 @@
                     </button>
                   </div>
                 </div>
+
+                <!-- Row 1 -->
+                <div class="weather-row mt-3" style="align-items: center;">
+                    <div class="weather-icons">
+                      <mat-icon style="color: #ffe167; font-size: 65px;">circle</mat-icon>
+                      <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 35px; position: absolute; top: 0; left: 30px;">cloud</mat-icon>
+                      <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 35px; position: absolute; left: 0; top: 27px;">cloud</mat-icon>
+                    </div>
+                    <div class="weather-column">
+                      <h1 style="font-size: 44px; margin-bottom: 0px;">{{ units ? WeatherDataCurrent.temp_celcius : WeatherDataCurrent.temp_fahrenheit}}°</h1>
+                      <h1 style="font-size: 16px; margin-bottom: 0px;"><button (click)="units = true" class="plain-button">°C</button> | <button (click)="units = false" class="plain-button">°F</button></h1>
+                    </div>
+                    <div class="weather-column" style="align-self: flex-start; margin-left: 15px; margin-top: 2px;">
+                      <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Feels Like: {{ units ? WeatherDataCurrent.temp_feels_celcius : WeatherDataCurrent.temp_feels_fahrenheit}}°</h1>
+                      <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Humidity: {{ WeatherDataCurrent.humidity }}</h1>
+                      <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Wind: {{ WeatherDataCurrent.wind }}</h1>
+                    </div>
+                    <div class="weather-column" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right;">
+                      <h1 style="font-size: 22px; margin-bottom: 0px; line-height: 24px;">Louisville, KY</h1>
+                      <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px;">{{ WeatherDataCurrent.day }} {{ WeatherDataCurrent.time }}</h1>
+                      <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">{{ WeatherDataCurrent.description }}</h1>
+                    </div>
+                </div>
               </mat-card>
             </div>
           </div>
@@ -61,7 +84,7 @@
                 <div class="row">
                   <!-- Title Icon -->
                   <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon>date_range</mat-icon>
+                    <mat-icon color="primary">date_range</mat-icon>
                   </div>
                   <!-- Title Text -->
                   <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
@@ -87,7 +110,7 @@
                 <div class="row">
                   <!-- Title Icon -->
                   <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon>group</mat-icon>
+                    <mat-icon color="primary">group</mat-icon>
                   </div>
                   <!-- Title Text -->
                   <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
@@ -111,7 +134,7 @@
                 <div class="row">
                   <!-- Title Icon -->
                   <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon>event</mat-icon>
+                    <mat-icon color="primary">event</mat-icon>
                   </div>
                   <!-- Title Text -->
                   <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
@@ -138,7 +161,7 @@
             <div class="row">
               <!-- Title Icon -->
               <div class="col-auto" style="display: flex; align-items: center;">
-                <mat-icon>description</mat-icon>
+                <mat-icon color="primary">description</mat-icon>
               </div>
               <!-- Title Text -->
               <div class="col" style="display: flex; align-items: center; padding-left: 0px;">

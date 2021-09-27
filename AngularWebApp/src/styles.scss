@@ -314,10 +314,8 @@ $altTheme: (
 a:hover {
   color: white;
 }
-@media screen and (min-width: 600px) {
-  .container-fluid {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 // End Bootstrap overrides
