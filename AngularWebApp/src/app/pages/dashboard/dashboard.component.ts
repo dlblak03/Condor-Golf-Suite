@@ -13,6 +13,14 @@ export class DashboardComponent implements OnInit {
   cloudy: any;
   units: any = true;
 
+  today: any;
+  tomorrow: any;
+  tomorrow_1: any;
+  tomorrow_2: any;
+  tomorrow_3: any;
+  tomorrow_4: any;
+  tomorrow_5: any;
+
   constructor() { }
 
   ngOnInit() {
@@ -59,6 +67,19 @@ export class DashboardComponent implements OnInit {
       this.cloudy = false;
     }
 
+    this.today = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow_1 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow_2 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow_3 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow_4 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    currentDate.setDate(currentDate.getDate() + 1);
+    this.tomorrow_5 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
   }
 
   roundToHour(date: Date) {

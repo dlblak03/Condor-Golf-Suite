@@ -64,7 +64,7 @@
                     </div>
                     <div class="weather-column" style="align-self: flex-start; margin-left: 15px; margin-top: 2px;">
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Feels Like: {{ units ? WeatherDataCurrent.temp_feels_celcius : WeatherDataCurrent.temp_feels_fahrenheit}}°</h1>
-                      <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Humidity: {{ WeatherDataCurrent.humidity }}</h1>
+                      <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Humidity: {{ WeatherDataCurrent.humidity }}%</h1>
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Wind: {{ WeatherDataCurrent.wind }}</h1>
                     </div>
                     <div class="weather-column" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right;">
@@ -72,6 +72,30 @@
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px;">{{ WeatherDataCurrent.day }} {{ WeatherDataCurrent.time }}</h1>
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">{{ WeatherDataCurrent.description }}</h1>
                     </div>
+                </div>
+
+                <div class="weather-row mt-2" style="align-items: center; justifiy-content: center; text-align: center;">
+                  <div class="weather-item">
+                    {{ today }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow_1 }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow_2 }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow_3 }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow_4 }}
+                  </div>
+                  <div class="weather-item">
+                    {{ tomorrow_5 }}
+                  </div>
                 </div>
               </mat-card>
             </div>
