@@ -35,4 +35,6 @@
 
 .weather-item {
   flex-grow: 1;
+  flex-direction: column;
+  display: flex;
 }

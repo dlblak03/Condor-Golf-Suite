@@ -34,25 +34,25 @@
             <div class="col">
               <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
                 <!-- Title Row -->
-                <div class="row">
+                <!-- <div class="row"> -->
                   <!-- Title Icon -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
+                  <!-- <div class="col-auto" style="display: flex; align-items: center;">
                     <mat-icon color="primary">nights_stay</mat-icon>
-                  </div>
+                  </div> -->
                   <!-- Title Text -->
-                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
+                  <!-- <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
                     <h2 style="font-weight: 400; margin-bottom: 0px;">Weather</h2>
-                  </div>
+                  </div> -->
                   <!-- Title More Settings -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
-                    <button mat-button class="circle">
+                  <!-- <div class="col" style="display: flex; align-items: center; align-self: flex-end"> -->
+                    <!-- <button mat-button class="circle">
                       <mat-icon>more_vert</mat-icon>
-                    </button>
-                  </div>
-                </div>
+                    </button> -->
+                  <!-- </div> -->
+                <!-- </div> -->
 
                 <!-- Row 1 -->
-                <div class="weather-row mt-3" style="align-items: center;">
+                <div class="weather-row mt-2" style="align-items: center;">
                     <div class="weather-icons">
                       <mat-icon style="color: #ffe167; font-size: 65px;">circle</mat-icon>
                       <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 35px; position: absolute; top: 0; left: 30px;">cloud</mat-icon>
@@ -67,7 +67,7 @@
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Humidity: {{ WeatherDataCurrent.humidity }}%</h1>
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Wind: {{ WeatherDataCurrent.wind }}</h1>
                     </div>
-                    <div class="weather-column" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right;">
+                    <div class="weather-column" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right; padding-right: 10px;">
                       <h1 style="font-size: 22px; margin-bottom: 0px; line-height: 24px;">Louisville, KY</h1>
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px;">{{ WeatherDataCurrent.day }} {{ WeatherDataCurrent.time }}</h1>
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">{{ WeatherDataCurrent.description }}</h1>
@@ -75,26 +75,15 @@
                 </div>
 
                 <div class="weather-row mt-2" style="align-items: center; justifiy-content: center; text-align: center;">
-                  <div class="weather-item">
-                    {{ today }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow_1 }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow_2 }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow_3 }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow_4 }}
-                  </div>
-                  <div class="weather-item">
-                    {{ tomorrow_5 }}
+                  <div *ngFor="let day of futureForecast" class="weather-item">
+                    <div>
+                      {{ day.day }}
+                    </div>
+
+                    <div>
+                      {{ day.temp_min_celcius }}
+                      {{ day.temp_max_celcius }}
+                    </div>
                   </div>
                 </div>
               </mat-card>

@@ -13,13 +13,7 @@ export class DashboardComponent implements OnInit {
   cloudy: any;
   units: any = true;
 
-  today: any;
-  tomorrow: any;
-  tomorrow_1: any;
-  tomorrow_2: any;
-  tomorrow_3: any;
-  tomorrow_4: any;
-  tomorrow_5: any;
+  futureForecast: any = new Array();
 
   constructor() { }
 
@@ -67,24 +61,88 @@ export class DashboardComponent implements OnInit {
       this.cloudy = false;
     }
 
-    this.today = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    let temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow_1 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow_2 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow_3 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow_4 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
     currentDate.setDate(currentDate.getDate() + 1);
-    this.tomorrow_5 = currentDate.toLocaleDateString('en-us', { weekday: 'long' });
+    temp = {
+      day: this.getShortDay(currentDate.toLocaleDateString('en-us', { weekday: 'long' })),
+      temp_min_celcius: '16°',
+      temp_max_celcius: '28°'
+   }
+    this.futureForecast.push(temp);
+
+    console.log(this.futureForecast);
   }
 
   roundToHour(date: Date) {
     let p = 60 * 60 * 1000; // milliseconds in an hour
     return new Date(Math.round(date.getTime() / p) * p);
+  }
+
+  getShortDay(day: String) {
+    switch(day) {
+      case "Monday":
+        return "Mon";
+      case "Tuesday":
+        return "Tue";
+      case "Wednesday":
+        return "Wed";
+      case "Thursday":
+        return "Thu";
+      case "Friday":
+        return "Fri";
+      case "Saturday":
+        return "Sat";
+      case "Sunday":
+        return "Sun";
+      default:
+        return "";
+    }
   }
 
 }
