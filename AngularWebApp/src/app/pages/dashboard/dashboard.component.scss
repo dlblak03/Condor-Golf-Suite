@@ -2,10 +2,7 @@
   align-items: center;
 }
 
-.main-content {
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 
 .weather-icons {
   position: relative;
@@ -25,7 +22,6 @@
 
 .weather-row {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .weather-column {
@@ -37,4 +33,10 @@
   flex-grow: 1;
   flex-direction: column;
   display: flex;
+  min-width: 93px;
+}
+
+.today-weather {
+  background-color: #f4f4f4;
+  border-radius: 5px;
 }

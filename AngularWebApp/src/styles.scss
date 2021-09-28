@@ -293,6 +293,11 @@ $altTheme: (
   height: 100%;
 }
 
+.main-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .mat-menu-panel {
   margin-bottom: 10px !important;
 }
@@ -319,3 +324,24 @@ a:hover {
   padding-right: 0px;
 }
 // End Bootstrap overrides
+
+html {
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #90A4AE;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG) ;
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
+}
