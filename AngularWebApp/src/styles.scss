@@ -315,6 +315,12 @@ $altTheme: (
   padding: 0px !important;
 }
 
+@media screen and (min-width: 1021px) {
+  .tablet-display {
+    display: none;
+  }
+}
+
 // Bootstrap overrides
 a:hover {
   color: white;
