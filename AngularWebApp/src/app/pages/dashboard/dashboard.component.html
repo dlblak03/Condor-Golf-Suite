@@ -16,6 +16,7 @@
     <div class="main-content">
       <!-- Row 1 -->
       <div class="row">
+        <!-- Weather Widget -->
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
           <!-- Row 1 -->
           <div class="row mb-3">
@@ -24,9 +25,11 @@
                 <!-- Row 1 -->
                 <div class="weather-row mt-2" style="align-items: center;">
                     <div class="weather-icons">
-                      <mat-icon style="color: #ffe167; font-size: 65px;">circle</mat-icon>
+                      <mat-icon *ngIf="!rainy_current" style="color: #ffe167; font-size: 65px;">circle</mat-icon>
                       <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 35px; position: absolute; top: 0; left: 30px;">cloud</mat-icon>
                       <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 35px; position: absolute; left: 0; top: 27px;">cloud</mat-icon>
+                      <mat-icon *ngIf="rainy_current" style="color: #add8e6; font-size: 65px; position: absolute; left: 36px; transform: rotate(75deg)">water</mat-icon>
+                      <mat-icon *ngIf="rainy_current" style="color: #e2e2e2; font-size: 65px; position: absolute; left: 0; top: -15px;">cloud</mat-icon>
                     </div>
                     <div class="weather-column">
                       <h1 style="font-size: 44px; margin-bottom: 0px;">{{ units ? WeatherDataCurrent.temp_celcius : WeatherDataCurrent.temp_fahrenheit}}°</h1>
@@ -37,7 +40,7 @@
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Humidity: {{ WeatherDataCurrent.humidity }}%</h1>
                       <h1 style="font-size: 14px; margin-bottom: 0px; line-height: 18px;">Wind: {{ WeatherDataCurrent.wind }}</h1>
                     </div>
-                    <div class="weather-column" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right; padding-right: 10px;">
+                    <div class="weather-column hide-tablet" style="align-self: flex-start; margin-left: auto; margin-top: 2px; text-align: right; padding-right: 10px;">
                       <h1 style="font-size: 22px; margin-bottom: 0px; line-height: 24px;">Louisville, KY</h1>
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px;">{{ WeatherDataCurrent.day }} {{ WeatherDataCurrent.time }}</h1>
                       <h1 style="font-size: 16px; margin-bottom: 0px; line-height: 20px; text-transform: capitalize;">{{ WeatherDataCurrent.description }}</h1>
@@ -47,20 +50,22 @@
                 <hr style="margin-top: 7px; color: #d4d4d4;">
 
                 <div class="weather-row mt-1" style="align-items: center; text-align: center; overflow: auto;">
-                  <div *ngFor="let day of futureForecast; let i =index; let first = first;" class="weather-item" [ngClass]="{ 'today-weather': first }">
+                  <div *ngFor="let day of futureForecast; let i = index; let first = first;" class="weather-item" [ngClass]="{ 'today-weather': first }">
                     <div>
                       <h1 style="font-size: 16px; margin-bottom: 0px; font-weight: 500;">{{ day.day }}</h1>
                     </div>
 
-                    <div class="weather-icons" style="height: auto; width: auto;">
-                      <mat-icon style="color: #ffe167; font-size: 35px; margin-left: -13px;">circle</mat-icon>
-                      <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 18px; position: absolute; top: 0px; margin-left: -9px;">cloud</mat-icon>
-                      <mat-icon *ngIf="cloudy" style="color: #e2e2e2; font-size: 18px; position: absolute; top: 14px; margin-left: -29px;">cloud</mat-icon>
+                    <div class="weather-icons" style="height: 41px; width: auto;">
+                      <mat-icon *ngIf="!day.rainy" style="color: #ffe167; font-size: 35px; margin-left: -13px;">circle</mat-icon>
+                      <mat-icon *ngIf="day.cloudy" style="color: #e2e2e2; font-size: 18px; position: absolute; top: 0px; margin-left: -9px;">cloud</mat-icon>
+                      <mat-icon *ngIf="day.cloudy" style="color: #e2e2e2; font-size: 18px; position: absolute; top: 14px; margin-left: -29px;">cloud</mat-icon>
+                      <mat-icon *ngIf="day.rainy" style="color: #add8e6; font-size: 35px; transform: rotate(75deg); position: absolute; left: 41%; top: 3px;">water</mat-icon>
+                      <mat-icon *ngIf="day.rainy" style="color: #e2e2e2; font-size: 35px; position: absolute; left: 32%; top: -7px;">cloud</mat-icon>
                     </div>
 
                     <div>
-                      {{ day.temp_min_celcius }}
-                      <font style="font-weight: 500;">{{ day.temp_max_celcius }}</font>
+                      {{ day.temp_min_celcius }}°
+                      <font style="font-weight: 500;">{{ day.temp_max_celcius }}°</font>
                     </div>
                   </div>
                 </div>

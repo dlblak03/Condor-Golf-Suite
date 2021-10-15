@@ -40,3 +40,9 @@
   background-color: #f4f4f4;
   border-radius: 5px;
 }
+
+@media screen and (max-width: 1020px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
