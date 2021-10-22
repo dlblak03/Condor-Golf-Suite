@@ -20,13 +20,13 @@
         </mat-form-field>
         <br><br>
         <button mat-raised-button color="accent" style="width: 100%; color: white; margin-bottom: 5px;" [disabled]="!loginForm.form.valid">Login</button>
-        <span style="color: #FB7B75;" [ngClass]="incorrectUP ? 'mat-caption' : 'hide'">Incorrect Username or Password</span>
+        <span style="color: #FB7B75;" [ngClass]="incorrectUP ? 'mat-caption' : 'hide'">Incorrect username or password</span>
       </form>
 
-      <form *ngIf="updatePassword" #changePassword="ngForm" (ngSubmit)="changePW(changePassword)" #ChangePassForm="ngForm" style="margin-bottom: 5px;">
+      <form *ngIf="updatePassword" #changePassword="ngForm" (ngSubmit)="newPwChallange(changePassword)" #ChangePassForm="ngForm" style="margin-bottom: 5px;">
         <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
           <mat-label>New Password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" name="newpassword" ngModel required #newpassword="ngModel" (keyup)="validatePassword(changePassword)">
+          <input matInput [type]="hide ? 'password' : 'text'" name="newpassword" ngModel required #newpassword="ngModel" (keyup)="validatePassword(changePassword)" (blur)="validatePassword(changePassword)">
         </mat-form-field>
         <div class="with-icon mat-caption">
           <mat-icon *ngIf="more" color="accent">done</mat-icon><mat-icon *ngIf="!more" color="warn">clear</mat-icon><span style="margin-left: 7px;">More than 8 characters</span>
@@ -44,7 +44,8 @@
           <mat-icon *ngIf="lowercase" color="accent">done</mat-icon><mat-icon *ngIf="!lowercase" color="warn">clear</mat-icon><span style="margin-left: 7px;">Lowercase letter</span>
         </div>
         <br>
-        <button mat-raised-button color="accent" style="width: 100%; color: white;" [disabled]="!ChangePassForm.form.valid">Change Password</button>
+        <button mat-raised-button color="accent" style="width: 100%; color: white; margin-bottom: 5px;" [disabled]="!ChangePassForm.form.valid">Change Password</button>
+        <span style="color: #FB7B75;" [ngClass]="policyPW ? 'mat-caption' : 'hide'">Password does not meet requirements</span>
       </form>
     </mat-card>
   </div>

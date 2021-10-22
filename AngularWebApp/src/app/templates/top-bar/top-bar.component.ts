@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthUserService } from "../../auth/auth-user.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -11,9 +13,14 @@ export class TopBarComponent implements OnInit {
   course_name = 'The Crossings Golf Club';
   status = 'Active';
 
-  constructor() { }
+  constructor(private authService: AuthUserService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  logout() {
+    this.authService.logOut();
+    this.router.navigate(["login"]);
   }
 
 }
