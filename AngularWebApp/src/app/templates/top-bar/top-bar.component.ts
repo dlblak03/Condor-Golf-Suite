@@ -16,6 +16,7 @@ export class TopBarComponent implements OnInit {
   constructor(private authService: AuthUserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.name = this.authService.getName();
   }
 
   logout() {

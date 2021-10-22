@@ -51,7 +51,14 @@ signIn(login: NgForm) {
       onSuccess: (result: any) => {
         this.loading = false;
         this.authUser.setCognitoUser(this.cognitoUser);
-        this.router.navigate(["dashboard"]);
+        this.cognitoUser.getUserAttributes((err: any, result: any) => {
+          if (err) {
+            alert(err.message || JSON.stringify(err));
+            return;
+          }
+          this.authUser.setName(result[3].getValue());
+          this.router.navigate(["dashboard"]);
+        });
       },
       onFailure: (err: any) => {
         this.loading = false;
@@ -65,6 +72,13 @@ signIn(login: NgForm) {
         this.incorrectUP = false;
         this.updatePassword = true;
         this.authUser.setCognitoUser(this.cognitoUser);
+        this.cognitoUser.getUserAttributes((err: any, result: any) => {
+          if (err) {
+            alert(err.message || JSON.stringify(err));
+            return;
+          }
+          this.authUser.setName(result[3].getValue());
+        });
       }
     });
 
