@@ -10,20 +10,21 @@ import { MembersComponent } from './pages/members/members.component';
 import { EventsComponent } from './pages/events/events.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { CommunityComponent } from './pages/community/community.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: '*', redirectTo: '/login'},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'teesheet', component: TeeSheetComponent},
-  {path: 'players', component: PlayersComponent},
-  {path: 'reports', component: ReportsComponent},
-  {path: 'billing', component: BillingComponent},
-  {path: 'members', component: MembersComponent},
-  {path: 'events', component: EventsComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'community', component: CommunityComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  {path: 'teesheet', component: TeeSheetComponent, canActivate: [AuthGuard] },
+  {path: 'players', component: PlayersComponent, canActivate: [AuthGuard] },
+  {path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
+  {path: 'billing', component: BillingComponent, canActivate: [AuthGuard] },
+  {path: 'members', component: MembersComponent, canActivate: [AuthGuard] },
+  {path: 'events', component: EventsComponent, canActivate: [AuthGuard] },
+  {path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  {path: 'community', component: CommunityComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

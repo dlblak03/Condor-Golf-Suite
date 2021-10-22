@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationDetails, CognitoUser, CognitoUserPool } from 'amazon-cognito-identity-js';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { AuthUserService } from "../auth-user.service";
 
 
 @Component({
@@ -12,13 +13,6 @@ import {NgForm} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  poolData = {
-    UserPoolId: environment.cognitoUserPoolId,
-    ClientId: environment.cognitoAppClientId
-  };
-
-  userPool = new CognitoUserPool(this.poolData);
-
   cognitoUser: any = null;
 
   hide = true;
@@ -27,121 +21,124 @@ export class LoginComponent implements OnInit {
   updatePassword = false;
 
   more = false;
-  number =false;
+  number = false;
   special = false;
   uppercase = false;
   lowercase = false;
+  policyPW = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authUser: AuthUserService ) {
 
   }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+}
 
-  signIn(login: NgForm) {
-      try {
-        this.loading = true;
+signIn(login: NgForm) {
+  try {
+    this.loading = true;
 
-        let authenticationDetails = new AuthenticationDetails({
-          Username: login.value.username,
-          Password: login.value.password,
-        });
+    let authenticationDetails = new AuthenticationDetails({
+      Username: login.value.username,
+      Password: login.value.password,
+    });
 
-        let userData = { Username: login.value.username, Pool: this.userPool };
+    this.authUser.setUserData(login.value.username);
 
-        this.cognitoUser = new CognitoUser(userData);
+    this.cognitoUser = this.authUser.getCognitoUser();
 
-        this.cognitoUser.authenticateUser(authenticationDetails, {
-          onSuccess: (result: any) => {
-            this.loading = false;
-            this.router.navigate(["dashboard"])
-
-          },
-          onFailure: (err: any) => {
-            this.loading = false;
-            this.incorrectUP = false;
-            console.log(err.message);
-            if(err.message.indexOf("Incorrect username or password.") != -1) {
-              this.incorrectUP = true;
-            }
-          },
-          newPasswordRequired: (result: any) => {
-            this.loading = false;
-            this.incorrectUP = false;
-            this.updatePassword = true;
-          }
-        });
-
-      } catch (error) {
-          console.log('error signing in', error);
+    this.cognitoUser.authenticateUser(authenticationDetails, {
+      onSuccess: (result: any) => {
+        this.loading = false;
+        this.authUser.setCognitoUser(this.cognitoUser);
+        this.router.navigate(["dashboard"]);
+      },
+      onFailure: (err: any) => {
+        this.loading = false;
+        this.incorrectUP = false;
+        if (err.message.indexOf("Incorrect username or password.") != -1) {
+          this.incorrectUP = true;
+        }
+      },
+      newPasswordRequired: (result: any) => {
+        this.loading = false;
+        this.incorrectUP = false;
+        this.updatePassword = true;
+        this.authUser.setCognitoUser(this.cognitoUser);
       }
+    });
+
+  } catch (error) {
+    console.log('error signing in', error);
+  }
+}
+
+validatePassword(validate: NgForm) {
+  if (validate.value.newpassword.length > 8) {
+    this.more = true;
+  }
+  else {
+    this.more = false;
   }
 
-  validatePassword(validate: NgForm) {
-    if(validate.value.newpassword.length > 8) {
-      this.more = true;
-    }
-    else {
-      this.more = false;
-    }
-
-    if(/\d/.test(validate.value.newpassword)) {
-      this.number = true;
-    }
-    else {
-      this.number = false;
-    }
-
-    let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    if(format.test(validate.value.newpassword)) {
-      this.special = true;
-    }
-    else {
-      this.special = false;
-    }
-
-    if(/[A-Z]/.test(validate.value.newpassword)) {
-      this.uppercase = true;
-    }
-    else {
-      this.uppercase = false;
-    }
-
-    if(/[a-z]/.test(validate.value.newpassword)) {
-      this.lowercase = true;
-    }
-    else {
-      this.lowercase = false;
-    }
+  if (/\d/.test(validate.value.newpassword)) {
+    this.number = true;
+  }
+  else {
+    this.number = false;
   }
 
-  changePW(changePassword: NgForm) {
-    try {
-      let userAttributes = {
-        address: 'Test Address 123',
-        name: 'Test Name',
-        phone_number: '+15555555555'
+  let format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+  if (format.test(validate.value.newpassword)) {
+    this.special = true;
+  }
+  else {
+    this.special = false;
+  }
+
+  if (/[A-Z]/.test(validate.value.newpassword)) {
+    this.uppercase = true;
+  }
+  else {
+    this.uppercase = false;
+  }
+
+  if (/[a-z]/.test(validate.value.newpassword)) {
+    this.lowercase = true;
+  }
+  else {
+    this.lowercase = false;
+  }
+}
+
+newPwChallange(changePassword: NgForm) {
+  try {
+    this.loading = true;
+
+    let userAttributes = {
+      address: 'Test Address 123',
+      name: 'Test Name',
+      phone_number: '+15555555555'
+    }
+
+    this.cognitoUser.completeNewPasswordChallenge(changePassword.value.newpassword, userAttributes, {
+      onSuccess: (result: any) => {
+        this.loading = false;
+        this.policyPW = false;
+        this.authUser.setCognitoUser(this.cognitoUser);
+        this.router.navigate(["dashboard"]);
+      },
+      onFailure: (err: any) => {
+        if(err.message.indexOf("Password does not conform to policy: Password not long enough") != -1) {
+          this.loading = false;
+          this.policyPW = true;
+        }
       }
-      this.cognitoUser.completeNewPasswordChallenge(changePassword.value.newpassword, userAttributes, {
-         onSuccess: (result: any) => {
-           this.loading = false;
-           this.router.navigate(["dashboard"])
-
-         },
-         onFailure: (err: any) => {
-           this.loading = false;
-           console.log(err);
-         }
-     });
-    }
-    catch (error) {
-        console.log('error changing password', error);
-    }
+    });
   }
-
-  goto(page: string) {
-    this.router.navigate([page]);
+  catch (error) {
+    console.log('error changing password', error);
   }
+}
 
 }
