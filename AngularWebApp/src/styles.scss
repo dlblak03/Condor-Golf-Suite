@@ -106,7 +106,7 @@ $mat-light-theme-background: (
   card:                     $light-bg-lighter-5,
   dialog:                   $light-bg-lighter-5,
   tooltip:                  $dark-bg-tooltip,
-  disabled-button:          $dark-bg-alpha-12,
+  // disabled-button:          $dark-bg-alpha-12,
   raised-button:            $light-bg-lighter-5,
   focused-button:           $dark-focused,
   selected-button:          $light-bg-darker-20,
@@ -134,7 +134,7 @@ $mat-dark-theme-background: (
   card:                     $dark-bg-lighter-5,
   dialog:                   $dark-bg-lighter-5,
   tooltip:                  $dark-bg-lighter-20,
-  disabled-button:          $light-bg-alpha-12,
+  // disabled-button:          $light-bg-alpha-12,
   raised-button:            $dark-bg-lighter-5,
   focused-button:           $light-focused,
   selected-button:          $dark-bg-lighter-20,
@@ -192,7 +192,7 @@ $mat-accent: (
 $theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
 
 body {
-  --warn-color: #e63946;
+  --warn-color: #FB7B75;
   --warn-lighter-color: #f8c4c8;
   --warn-darker-color: #db242f;
   --text-warn-color: #{$light-primary-text};
@@ -350,4 +350,8 @@ html {
   background-color: var(--thumbBG) ;
   border-radius: 6px;
   border: 3px solid var(--scrollbarBG);
+}
+
+.hide {
+  display: none;
 }

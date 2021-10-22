@@ -21,6 +21,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { TopBarComponent } from './templates/top-bar/top-bar.component';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { TopBarComponent } from './templates/top-bar/top-bar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

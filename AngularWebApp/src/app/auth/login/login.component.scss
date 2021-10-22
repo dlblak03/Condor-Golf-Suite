@@ -26,3 +26,20 @@ h3 {
 mat-form-field {
   width: 100%;
 }
+
+.top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 290px;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background-color: white !important;
+}
+
+.with-icon {
+    display: flex;
+    align-items: center;
+}
