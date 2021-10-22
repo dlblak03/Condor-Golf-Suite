@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit {
 
   cognitoUser: any = null;
 
-  passwordTemp = "";
-
   hide = true;
   loading = false;
   incorrectUP = false;
@@ -67,11 +65,12 @@ export class LoginComponent implements OnInit {
             if(err.message.indexOf("Incorrect username or password.") != -1) {
               this.incorrectUP = true;
             }
-            else if(err.message.indexOf("callback.newPasswordRequired") != -1) {
-              this.updatePassword = true;
-              this.passwordTemp = login.value.username;
-            }
           },
+          newPasswordRequired: (result: any) => {
+            this.loading = false;
+            this.incorrectUP = false;
+            this.updatePassword = true;
+          }
         });
 
       } catch (error) {
