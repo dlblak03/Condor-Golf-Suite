@@ -1,5 +1,51 @@
 <div class="loginWrapper">
   <div class="loginItem">
-    <mat-card>Login Works</mat-card>
+    <mat-card [class.mat-elevation-z8]="true" style="position: relative;">
+      <div [ngClass]="loading ? 'top' : 'top hide'">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+
+      <h1 color="primary">Condor Golf Suite</h1>
+
+      <form *ngIf="!updatePassword" #login="ngForm" (ngSubmit)="signIn(login)" #loginForm="ngForm">
+        <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" name="username" ngModel required #username="ngModel">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" name="password" ngModel required #password="ngModel">
+          <mat-hint align="end">Forgot Password?</mat-hint>
+        </mat-form-field>
+        <br><br>
+        <button mat-raised-button color="accent" style="width: 100%; color: white; margin-bottom: 5px;" [disabled]="!loginForm.form.valid">Login</button>
+        <span style="color: #FB7B75;" [ngClass]="incorrectUP ? 'mat-caption' : 'hide'">Incorrect Username or Password</span>
+      </form>
+
+      <form *ngIf="updatePassword" #changePassword="ngForm" (ngSubmit)="changePW(changePassword)" #ChangePassForm="ngForm" style="margin-bottom: 5px;">
+        <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
+          <mat-label>New Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" name="newpassword" ngModel required #newpassword="ngModel" (keyup)="validatePassword(changePassword)">
+        </mat-form-field>
+        <div class="with-icon mat-caption">
+          <mat-icon *ngIf="more" color="accent">done</mat-icon><mat-icon *ngIf="!more" color="warn">clear</mat-icon><span style="margin-left: 7px;">More than 8 characters</span>
+        </div>
+        <div class="with-icon mat-caption">
+          <mat-icon *ngIf="number" color="accent">done</mat-icon><mat-icon *ngIf="!number" color="warn">clear</mat-icon><span style="margin-left: 7px;">Number</span>
+        </div>
+        <div class="with-icon mat-caption">
+          <mat-icon *ngIf="special" color="accent">done</mat-icon><mat-icon *ngIf="!special" color="warn">clear</mat-icon><span style="margin-left: 7px;">Special character (!, *, +, etc.)</span>
+        </div>
+        <div class="with-icon mat-caption">
+          <mat-icon *ngIf="uppercase" color="accent">done</mat-icon><mat-icon *ngIf="!uppercase" color="warn">clear</mat-icon><span style="margin-left: 7px;">Uppercase letter</span>
+        </div>
+        <div class="with-icon mat-caption">
+          <mat-icon *ngIf="lowercase" color="accent">done</mat-icon><mat-icon *ngIf="!lowercase" color="warn">clear</mat-icon><span style="margin-left: 7px;">Lowercase letter</span>
+        </div>
+        <br>
+        <button mat-raised-button color="accent" style="width: 100%; color: white;" [disabled]="!ChangePassForm.form.valid">Change Password</button>
+      </form>
+    </mat-card>
   </div>
 </div>

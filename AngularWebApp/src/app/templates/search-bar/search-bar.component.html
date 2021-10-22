@@ -1,0 +1,33 @@
+<div class="search-bar-wrapper">
+  <div class="search-bar">
+    <!-- Search Icon  -->
+    <div>
+      <button class="circle" mat-button style="margin-right: 5px;">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+    <!-- Input -->
+    <div [ngClass]="search ? 'search-input display-search' : 'search-input display-search'">
+      <mat-form-field floatLabel="never" class="full-width-input" color="accent">
+        <input matInput placeholder="Search for Tee Times, Players, or Events" id="search-field">
+      </mat-form-field>
+    </div>
+
+    <!-- Close Icon -->
+    <div>
+      <button (click)="search = !search" mat-button [ngClass]="search ? 'search-label hide-search-label' : 'search-label hide-search-label'">
+        Search
+      </button>
+      <button (click)="search = !search;" mat-button [ngClass]="search ? 'search-label circle' : 'search-label hide-search-label circle'">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <div style="margin-left: auto; padding-left: 5px;" routerLink='/settings'>
+      <button mat-button class="circle">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

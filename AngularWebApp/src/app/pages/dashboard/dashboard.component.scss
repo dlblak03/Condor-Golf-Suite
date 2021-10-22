@@ -1,0 +1,48 @@
+.center {
+  align-items: center;
+}
+
+
+
+.weather-icons {
+  position: relative;
+  height: 75px;
+  width: 85px;
+}
+
+.hide {
+  display: none;
+}
+
+.plain-button {
+  border: none;
+  background: none;
+  padding: 0px;
+}
+
+.weather-row {
+  display: flex;
+}
+
+.weather-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-item {
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+  min-width: 93px;
+}
+
+.today-weather {
+  background-color: #f4f4f4;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1020px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
