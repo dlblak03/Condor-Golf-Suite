@@ -118,6 +118,7 @@ export class LoginComponent implements OnInit {
 
   changePW(changePassword: NgForm) {
     try {
+      this.loading = true;
       let userAttributes = {
         address: 'Test Address 123',
         name: 'Test Name',
