@@ -20,6 +20,8 @@ export class AuthUserService {
 
   private statusCode = 0;
 
+  private name = '';
+
   constructor() { }
 
   setUserData(username: string) {
@@ -55,5 +57,13 @@ export class AuthUserService {
   logOut() {
     let authenticatedUser = this.userPool.getCurrentUser();
     authenticatedUser?.signOut();
+  }
+
+  setName(name: string) {
+    this.name = name;
+  }
+
+  getName() {
+    return this.name;
   }
 }
