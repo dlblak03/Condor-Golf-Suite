@@ -131,7 +131,7 @@ newPwChallange(changePassword: NgForm) {
 
     let userAttributes = {
       address: 'Test Address 123',
-      name: 'Test Name',
+      name: changePassword.value.fullname,
       phone_number: '+15555555555'
     }
 

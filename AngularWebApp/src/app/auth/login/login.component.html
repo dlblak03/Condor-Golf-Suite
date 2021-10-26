@@ -25,6 +25,10 @@
 
       <form *ngIf="updatePassword" #changePassword="ngForm" (ngSubmit)="newPwChallange(changePassword)" #ChangePassForm="ngForm" style="margin-bottom: 5px;">
         <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
+          <mat-label>Full Name</mat-label>
+          <input matInput [type]="'text'" name="fullname" ngModel required #fullname="ngModel">
+        </mat-form-field>
+        <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true">
           <mat-label>New Password</mat-label>
           <input matInput [type]="hide ? 'password' : 'text'" name="newpassword" ngModel required #newpassword="ngModel" (keyup)="validatePassword(changePassword)" (blur)="validatePassword(changePassword)">
         </mat-form-field>
