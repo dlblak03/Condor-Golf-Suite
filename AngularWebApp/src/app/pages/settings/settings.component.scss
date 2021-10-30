@@ -1,0 +1,13 @@
+.content-wrapper {
+  height: calc(100vh - 50px) !important;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+}
+
+.settings-wrapper {
+  max-width: 1000px;
+  flex-grow: 1;
+}

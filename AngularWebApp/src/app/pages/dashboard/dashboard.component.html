@@ -1,3 +1,5 @@
+<app-loader [style.visibility]="load ? '' : 'hidden'"></app-loader>
+
 <app-top-nav ngClass="tablet-display"></app-top-nav>
 
 <div class="content-wrapper">
@@ -64,8 +66,8 @@
                     </div>
 
                     <div>
-                      {{ day.temp_min_celcius }}°
-                      <font style="font-weight: 500;">{{ day.temp_max_celcius }}°</font>
+                      {{ units ? day.temp_min_celcius : day.temp_min_fahrenheit}}°
+                      <font style="font-weight: 500;">{{ units ? day.temp_max_celcius : day.temp_max_fahrenheit}}°</font>
                     </div>
                   </div>
                 </div>

@@ -22,6 +22,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { TopBarComponent } from './templates/top-bar/top-bar.component';
 import { FormsModule }   from '@angular/forms';
+import { LoaderComponent } from './templates/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormsModule }   from '@angular/forms';
     EventsComponent,
     SettingsComponent,
     CommunityComponent,
-    TopBarComponent
+    TopBarComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
