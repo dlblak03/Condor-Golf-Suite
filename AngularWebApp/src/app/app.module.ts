@@ -23,6 +23,7 @@ import { CommunityComponent } from './pages/community/community.component';
 import { TopBarComponent } from './templates/top-bar/top-bar.component';
 import { FormsModule }   from '@angular/forms';
 import { LoaderComponent } from './templates/loader/loader.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { LoaderComponent } from './templates/loader/loader.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
