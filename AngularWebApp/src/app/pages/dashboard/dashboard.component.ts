@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AddPlayerComponent } from '../../dialogs/add-player/add-player.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   futureForecast: any = new Array();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, public dialog: MatDialog) { }
 
   async ngOnInit() {
     this.getWeatherData();
@@ -328,6 +330,16 @@ export class DashboardComponent implements OnInit {
    return new Promise((resolve) => {
      setTimeout(resolve, ms);
    });
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddPlayerComponent, {
+      width: '325px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   createPlayer() {

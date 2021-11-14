@@ -104,21 +104,24 @@
           <div class="row mb-3">
             <div class="col">
               <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
-                <!-- Title Row -->
-                <div class="row">
-                  <!-- Title Icon -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon color="primary">group</mat-icon>
+                <!-- Row 1 -->
+                <div class="row" style="display: flex;">
+                  <div class="col" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <h1 style="margin: auto;" class="mat-display-2">2</h1>
+                    <h1 style="margin: auto;">Total Players</h1>
                   </div>
-                  <!-- Title Text -->
-                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                    <h2 style="font-weight: 400; margin-bottom: 0px;">Players</h2>
+
+                  <div class="col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div class="vertical-divider">&nbsp;</div>
                   </div>
-                  <!-- Title More Settings -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
-                    <button mat-button class="circle">
-                      <mat-icon>more_vert</mat-icon>
-                    </button>
+
+                  <div class="col" style="display: flex; flex-direction: column; justify-content: center; padding-left: 0px;">
+                    <div style="flex-grow: 1;">
+                      <button (click)="openDialog()" style="width: 100%;" mat-stroked-button><mat-icon color="primary" style="margin-right: 2px; margin-bottom: 3px;">add</mat-icon>Add Player</button>
+                    </div>
+                    <div style="flex-grow: 1;">
+                      <button style="width: 100%;" mat-stroked-button><mat-icon color="primary" style="margin-right: 2px; margin-bottom: 3px;">search</mat-icon>Search</button>
+                    </div>
                   </div>
                 </div>
               </mat-card>

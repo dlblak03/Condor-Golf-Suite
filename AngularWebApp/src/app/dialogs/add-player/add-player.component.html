@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Add Player</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Full Name</mat-label>
+    <input matInput type="text" name="name" ngModel required #name="ngModel">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" name="email" ngModel required #email="ngModel">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+    <mat-label>Phone Number</mat-label>
+    <input matInput type="text" name="phone" ngModel #phone="ngModel">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button (click)="addPlayer();" mat-raised-button color="accent" style="color: white; width: 100%;">Add</button>
+</div>

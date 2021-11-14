@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   uppercase = false;
   lowercase = false;
   policyPW = false;
+  jwtToken = '';
 
   constructor(private router: Router, private authUser: AuthUserService ) {
 
@@ -51,6 +52,7 @@ signIn(login: NgForm) {
       onSuccess: (result: any) => {
         this.loading = false;
         this.authUser.setCognitoUser(this.cognitoUser);
+        localStorage.setItem('jwt', result.getAccessToken().getJwtToken());
         this.cognitoUser.getUserAttributes((err: any, result: any) => {
           if (err) {
             alert(err.message || JSON.stringify(err));
@@ -73,10 +75,6 @@ signIn(login: NgForm) {
         this.updatePassword = true;
         this.authUser.setCognitoUser(this.cognitoUser);
         this.cognitoUser.getUserAttributes((err: any, result: any) => {
-          if (err) {
-            alert(err.message || JSON.stringify(err));
-            return;
-          }
           this.authUser.setName(result[3].getValue());
         });
       }

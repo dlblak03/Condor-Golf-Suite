@@ -24,6 +24,7 @@ import { TopBarComponent } from './templates/top-bar/top-bar.component';
 import { FormsModule }   from '@angular/forms';
 import { LoaderComponent } from './templates/loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     SettingsComponent,
     CommunityComponent,
     TopBarComponent,
-    LoaderComponent
+    LoaderComponent,
+    AddPlayerComponent
   ],
   imports: [
     BrowserModule,
