@@ -131,21 +131,28 @@
           <div class="row mb-3">
             <div class="col">
               <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
-                <!-- Title Row -->
-                <div class="row">
-                  <!-- Title Icon -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
-                    <mat-icon color="primary">event</mat-icon>
+                <!-- Row 1 -->
+                <div class="row" style="display: flex;">
+                  <div class="col" style="display: flex; flex-direction: column; justify-content: start; align-items: center;">
+                    <h1 style="margin-top: 0px; margin-bottom: 5px;">Next Event:</h1>
+                    <h1 style="margin-top: 5px; margin-bottom: 0px;">October Scramble</h1>
+                    <h3 style="margin-bottom: 0px;">October 23, 2021</h3>
                   </div>
-                  <!-- Title Text -->
-                  <div class="col" style="display: flex; align-items: center; padding-left: 0px;">
-                    <h2 style="font-weight: 400; margin-bottom: 0px;">Events</h2>
+
+                  <div class="col-1" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div class="vertical-divider">&nbsp;</div>
                   </div>
-                  <!-- Title More Settings -->
-                  <div class="col-auto" style="display: flex; align-items: center;">
-                    <button mat-button class="circle">
-                      <mat-icon>more_vert</mat-icon>
-                    </button>
+
+                  <div class="col" style="display: flex; flex-direction: column; justify-content: center; padding-left: 0px;">
+                    <div>
+                      <button (click)="openDialog()" style="width: 100%;" mat-stroked-button><mat-icon color="primary" style="margin-right: 2px; margin-bottom: 3px;">add</mat-icon>Add Event</button>
+                    </div>
+                    <div>
+                      <hr>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                      <h1 style="font-size: 18px; margin: 0px;">Number of players: 40/60</h1>
+                    </div>
                   </div>
                 </div>
               </mat-card>
@@ -182,5 +189,4 @@
 
   </div>
 
-  <app-menu-widget></app-menu-widget>
 </div>
