@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   uppercase = false;
   lowercase = false;
   policyPW = false;
+  jwtToken = '';
 
   constructor(private router: Router, private authUser: AuthUserService ) {
 
@@ -51,6 +52,7 @@ signIn(login: NgForm) {
       onSuccess: (result: any) => {
         this.loading = false;
         this.authUser.setCognitoUser(this.cognitoUser);
+        localStorage.setItem('jwt', result.getAccessToken().getJwtToken());
         this.cognitoUser.getUserAttributes((err: any, result: any) => {
           if (err) {
             alert(err.message || JSON.stringify(err));
@@ -72,13 +74,6 @@ signIn(login: NgForm) {
         this.incorrectUP = false;
         this.updatePassword = true;
         this.authUser.setCognitoUser(this.cognitoUser);
-        this.cognitoUser.getUserAttributes((err: any, result: any) => {
-          if (err) {
-            alert(err.message || JSON.stringify(err));
-            return;
-          }
-          this.authUser.setName(result[3].getValue());
-        });
       }
     });
 
@@ -131,7 +126,7 @@ newPwChallange(changePassword: NgForm) {
 
     let userAttributes = {
       address: 'Test Address 123',
-      name: 'Test Name',
+      name: changePassword.value.fullname,
       phone_number: '+15555555555'
     }
 
@@ -140,6 +135,7 @@ newPwChallange(changePassword: NgForm) {
         this.loading = false;
         this.policyPW = false;
         this.authUser.setCognitoUser(this.cognitoUser);
+        this.authUser.setName(userAttributes.name);
         this.router.navigate(["dashboard"]);
       },
       onFailure: (err: any) => {
@@ -147,6 +143,7 @@ newPwChallange(changePassword: NgForm) {
           this.loading = false;
           this.policyPW = true;
         }
+        this.authUser.setName(userAttributes.name);
       }
     });
   }

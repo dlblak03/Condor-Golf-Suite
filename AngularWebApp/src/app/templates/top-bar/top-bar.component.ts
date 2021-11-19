@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TopBarComponent implements OnInit {
 
-  name = 'John Smith';
+  name: any = 'John Smith';
   course_name = 'The Crossings Golf Club';
   status = 'Active';
 

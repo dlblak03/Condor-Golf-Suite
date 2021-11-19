@@ -1,9 +1,29 @@
-<app-top-nav></app-top-nav>
+<app-top-nav ></app-top-nav>
 
 <div class="content-wrapper">
   <!-- Main Form Content -->
   <div class="container-fluid">
+    <!-- Top bar - Profile, Settings, Log Out -->
+    <app-top-bar></app-top-bar>
+
+    <br>
+
+    <div class="main-content">
+      <div class="settings-wrapper">
+        <mat-tab-group mat-align-tabs="left">
+          <mat-tab label="Profile">
+            Profile
+          </mat-tab>
+          <mat-tab label="Security">
+            Content 2
+          </mat-tab>
+          <mat-tab label="Course">
+            Content 3
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+
+    </div>
 
   </div>
-
 </div>

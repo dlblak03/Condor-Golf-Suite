@@ -22,6 +22,9 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { CommunityComponent } from './pages/community/community.component';
 import { TopBarComponent } from './templates/top-bar/top-bar.component';
 import { FormsModule }   from '@angular/forms';
+import { LoaderComponent } from './templates/loader/loader.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +43,17 @@ import { FormsModule }   from '@angular/forms';
     EventsComponent,
     SettingsComponent,
     CommunityComponent,
-    TopBarComponent
+    TopBarComponent,
+    LoaderComponent,
+    AddPlayerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

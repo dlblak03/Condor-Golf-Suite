@@ -1,28 +1,22 @@
 <app-top-nav ngClass="tablet-display"></app-top-nav>
 
 <div class="content-wrapper">
+  <!-- Side Nav Bar -->
   <div class="side-nav-wrapper">
     <app-side-nav></app-side-nav>
   </div>
-  <div class="body-wrapper container-fluid">
-    <!-- <app-search-bar></app-search-bar> -->
+
+  <!-- Main Form Content -->
+  <div class="container-fluid">
+    <!-- Top bar - Profile, Settings, Log Out -->
+    <app-top-bar></app-top-bar>
+
     <br>
-    <!-- Page Title -->
-    <div class="row">
-      <div class="col">
-        <h1 class="mat-display-1">Events</h1>
-      </div>
-      <div class="col-auto" style="padding-right: 0px;">
-        <button mat-button class="circle">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-      <div class="col-auto" style="padding-left: 0px;">
-        <button mat-button class="circle" routerLink='/settings'>
-          <mat-icon>settings</mat-icon>
-        </button>
-      </div>
+
+    <div class="main-content">
+
     </div>
+
   </div>
 
   <app-menu-widget></app-menu-widget>

@@ -61,9 +61,15 @@ export class AuthUserService {
 
   setName(name: string) {
     this.name = name;
+
+    localStorage.setItem('authenticated_name', name);
   }
 
   getName() {
-    return this.name;
+    return localStorage.getItem('authenticated_name');
+  }
+
+  getJwtToken() {
+    return localStorage.getItem('jwt');
   }
 }
