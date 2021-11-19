@@ -17,12 +17,11 @@ export class AddPlayerComponent implements OnInit {
   }
 
   addPlayer(user: NgForm):void {
-    const headers = { 'Access-Control-Allow-Origin': 'http://localhost:4200',
-    'Access-Control-Allow-Methods': 'http://localhost:4200',
-    'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret',
-    'Authorization': 'Bearer ' + this.authUser.getJwtToken()
-   };
-   console.log(headers);
+    const headers = { 'Access-Control-Allow-Origin': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com/',
+      'Access-Control-Allow-Methods': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com/',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret',
+      'Authorization': 'Bearer ' + this.authUser.getJwtToken()
+     };
     const body = { name: user.value.name, email: user.value.email, phone: user.value.phone, sort: user.value.name.charAt(0) };
     this.http.put<any>('https://kw31bx8r49.execute-api.us-east-1.amazonaws.com/players', body, { headers })
             .subscribe(data => {
