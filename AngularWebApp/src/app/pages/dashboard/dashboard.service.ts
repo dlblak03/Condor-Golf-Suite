@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthUserService } from 'src/app/auth/auth-user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class DashboardService {
 
   futureForecast: any = new Array();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authUser: AuthUserService) { }
 
   async getWeatherData() {
 
@@ -338,8 +339,11 @@ export class DashboardService {
   }
 
   async loadPlayerCount() {
-    const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': '*', 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization' };
-    const body = { name: 'Test Player', email: 'test@test.com', phone: '555-555-5555' };
+    const headers = { 'Access-Control-Allow-Origin': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com/',
+      'Access-Control-Allow-Methods': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com/',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret',
+      'Authorization': 'Bearer ' + this.authUser.getJwtToken()
+     };
     await this.http.get<any>('https://kw31bx8r49.execute-api.us-east-1.amazonaws.com/players/count', { headers })
             .toPromise()
             .then(data => {
