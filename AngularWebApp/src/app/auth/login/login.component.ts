@@ -74,9 +74,6 @@ signIn(login: NgForm) {
         this.incorrectUP = false;
         this.updatePassword = true;
         this.authUser.setCognitoUser(this.cognitoUser);
-        this.cognitoUser.getUserAttributes((err: any, result: any) => {
-          this.authUser.setName(result[3].getValue());
-        });
       }
     });
 
@@ -138,6 +135,7 @@ newPwChallange(changePassword: NgForm) {
         this.loading = false;
         this.policyPW = false;
         this.authUser.setCognitoUser(this.cognitoUser);
+        this.authUser.setName(userAttributes.name);
         this.router.navigate(["dashboard"]);
       },
       onFailure: (err: any) => {
@@ -145,6 +143,7 @@ newPwChallange(changePassword: NgForm) {
           this.loading = false;
           this.policyPW = true;
         }
+        this.authUser.setName(userAttributes.name);
       }
     });
   }

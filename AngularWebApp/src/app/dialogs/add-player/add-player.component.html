@@ -1,5 +1,7 @@
 <h1 mat-dialog-title>Add Player</h1>
+<form #user="ngForm" (ngSubmit)="addPlayer(user);">
 <div mat-dialog-content>
+
   <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
     <mat-label>Full Name</mat-label>
     <input matInput type="text" name="name" ngModel required #name="ngModel">
@@ -12,7 +14,9 @@
     <mat-label>Phone Number</mat-label>
     <input matInput type="text" name="phone" ngModel #phone="ngModel">
   </mat-form-field>
+
 </div>
 <div mat-dialog-actions>
-  <button (click)="addPlayer();" mat-raised-button color="accent" style="color: white; width: 100%;">Add</button>
+  <button  mat-raised-button color="accent" style="color: white; width: 100%;" [disabled]="!user.form.valid">Add</button>
 </div>
+</form>
