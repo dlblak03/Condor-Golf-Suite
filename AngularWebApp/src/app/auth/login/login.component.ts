@@ -136,6 +136,7 @@ newPwChallange(changePassword: NgForm) {
         this.policyPW = false;
         this.authUser.setCognitoUser(this.cognitoUser);
         this.authUser.setName(userAttributes.name);
+        localStorage.setItem('jwt', result.getAccessToken().getJwtToken());
         this.router.navigate(["dashboard"]);
       },
       onFailure: (err: any) => {
