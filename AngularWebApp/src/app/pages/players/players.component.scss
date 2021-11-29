@@ -1,3 +1,13 @@
 table {
   width: 100%;
 }
+
+.toggle-group {
+  flex-grow: 1;
+}
+
+.toggle-group-item {
+  flex-grow: 1;
+  max-height: 32px;
+  padding: 2px;
+}

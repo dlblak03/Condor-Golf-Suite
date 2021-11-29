@@ -13,6 +13,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   imports: [
@@ -29,7 +31,9 @@ import { MatTableModule } from '@angular/material/table';
     MatTabsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatButtonToggleModule
   ],
   exports: [
     MatCardModule,
@@ -44,7 +48,9 @@ import { MatTableModule } from '@angular/material/table';
     MatTabsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatButtonToggleModule
   ]
 })
 export class AngularMaterialModule { }

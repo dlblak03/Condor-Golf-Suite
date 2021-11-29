@@ -355,3 +355,19 @@ html {
 .hide {
   display: none;
 }
+
+.green-snackbar {
+  background-color: rgb(117, 174, 71);
+  color: white;
+  text-align: center;
+}
+
+.red-snackbar {
+  background-color: #FB7B75;
+  color: white;
+  text-align: center;
+}
+
+.mat-button-toggle-label-content {
+    line-height: 32px !important;
+}

@@ -25,6 +25,7 @@ import { FormsModule }   from '@angular/forms';
 import { LoaderComponent } from './templates/loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
+import { SuccessComponent } from './snackbars/success/success.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
     CommunityComponent,
     TopBarComponent,
     LoaderComponent,
-    AddPlayerComponent
+    AddPlayerComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

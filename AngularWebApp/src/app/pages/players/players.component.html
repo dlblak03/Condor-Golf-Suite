@@ -38,18 +38,45 @@
             </div>
 
             <div class="row">
+              <div class="col" style="display: flex;">
+                <mat-button-toggle-group name="sorter" aria-label="Sorter" class="toggle-group">
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="A">A</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="B">B</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="C">C</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="D">D</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="E">E</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="F">F</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="G">G</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="H">H</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="I">I</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="J">J</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="K">K</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="L">L</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="M">M</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="N">N</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="O">O</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="P">P</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="Q">Q</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="R">R</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="S">S</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="T">T</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="U">U</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="V">V</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="W">W</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="X">X</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="Y">Y</mat-button-toggle>
+                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="Z">Z</mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+            </div>
+
+            <div class="row">
               <div class="col">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
 
                   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
-
-                  <!-- Position Column -->
-                  <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-                  </ng-container>
-
+        
                   <!-- Name Column -->
                   <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> Name </th>

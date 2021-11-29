@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { AuthUserService } from "../../auth/auth-user.service";
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { SuccessComponent } from '../../snackbars//success/success.component';
 
 @Component({
   selector: 'app-add-player',
@@ -10,8 +12,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./add-player.component.scss']
 })
 export class AddPlayerComponent implements OnInit {
+  durationInSeconds = 2;
 
-  constructor(private http: HttpClient, private authUser: AuthUserService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private authUser: AuthUserService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +30,17 @@ export class AddPlayerComponent implements OnInit {
             .subscribe(data => {
               if(data == '200') {
                 this.dialog.closeAll();
+                this.snackBar.open("Successfully Added Player", "Okay", {
+                  duration: this.durationInSeconds * 1000,
+                  panelClass: ['green-snackbar']
+                });
+              }
+              else {
+                this.dialog.closeAll();
+                this.snackBar.open("Could Not Add Player", "Okay", {
+                  duration: this.durationInSeconds * 1000,
+                  panelClass: ['red-snackbar']
+                });
               }
             });
   }
