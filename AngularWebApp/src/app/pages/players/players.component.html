@@ -25,22 +25,14 @@
               </div>
               <!-- Title More Settings -->
               <div class="col-auto" style="display: flex; align-items: center;">
-                <button mat-button class="circle">
-                  <mat-icon>more_vert</mat-icon>
-                </button>
+
               </div>
             </div>
 
-            <div class="row">
-              <div class="col">
-                <hr style="margin: 0.3rem 0;">
-              </div>
-            </div>
-
-            <div class="row">
+            <div class="row" style="margin-top: 10px;">
               <div class="col" style="display: flex;">
-                <mat-button-toggle-group name="sorter" aria-label="Sorter" class="toggle-group">
-                  <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="A">A</mat-button-toggle>
+                <mat-button-toggle-group name="sorter" aria-label="Sorter" class="toggle-group" >
+                  <mat-button-toggle checked=true (change)="sortTable($event.value)" class="toggle-group-item" value="A">A</mat-button-toggle>
                   <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="B">B</mat-button-toggle>
                   <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="C">C</mat-button-toggle>
                   <mat-button-toggle (change)="sortTable($event.value)" class="toggle-group-item" value="D">D</mat-button-toggle>
@@ -70,13 +62,18 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="col">
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+            <div class="row" style="margin-top: 10px; padding: 0px 15px;">
+              <div class="col" class="mat-elevation-z2">
+                <table mat-table [dataSource]="dataSource" >
 
                   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
-        
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="playerid">
+                    <th mat-header-cell *matHeaderCellDef> Playerid </th>
+                    <td mat-cell *matCellDef="let element"> {{element.playerid}} </td>
+                  </ng-container>
+
                   <!-- Name Column -->
                   <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> Name </th>
@@ -98,6 +95,11 @@
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
+
+                <mat-paginator [pageSizeOptions]="[10, 15, 20]"
+                               showFirstLastButtons
+                               aria-label="Select page of players">
+                </mat-paginator>
               </div>
             </div>
           </mat-card>
