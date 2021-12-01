@@ -16,7 +16,7 @@
     <div class="main-content">
       <div class="row">
         <div class="col">
-          <mat-card style="box-shadow: none; border: solid 1px #e2e2e2;">
+          <mat-card style="box-shadow: none; border: solid 1px #e2e2e2; min-height: 840px;;">
             <!-- Title Row -->
             <div class="row">
               <!-- Title Text -->
@@ -63,7 +63,7 @@
             </div>
 
             <div class="row" style="margin-top: 10px; padding: 0px 15px;">
-              <div class="col" class="mat-elevation-z2">
+              <div class="col" class="">
                 <table mat-table [dataSource]="dataSource" >
 
                   <!--- Note that these columns can be defined in any order.
@@ -95,11 +95,6 @@
                   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
-
-                <mat-paginator [pageSizeOptions]="[10, 15, 20]"
-                               showFirstLastButtons
-                               aria-label="Select page of players">
-                </mat-paginator>
               </div>
             </div>
           </mat-card>
