@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>Edit Player</h1>
+<form #user="ngForm" (ngSubmit)="updatePlayer(user);">
+<div mat-dialog-content>
+
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;" style="display: none;">
+    <mat-label>Full Name</mat-label>
+    <input matInput type="text" name="playerid" ngModel required #playerid="ngModel" [ngModel]="data.playerid">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Full Name</mat-label>
+    <input matInput type="text" name="name" ngModel required #name="ngModel" [ngModel]="data.name">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" name="email" ngModel required #email="ngModel" [ngModel]="data.email">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+    <mat-label>Phone Number</mat-label>
+    <input matInput type="text" name="phone" ngModel #phone="ngModel" [ngModel]="data.phone">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button  mat-raised-button color="accent" style="color: white; width: 100%;" [disabled]="!user.form.valid">Update</button>
+</div>
+</form>

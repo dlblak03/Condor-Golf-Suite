@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthUserService } from 'src/app/auth/auth-user.service';
 import { DataSource } from '@angular/cdk/collections';
@@ -7,6 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddPlayerComponent } from '../../dialogs/add-player/add-player.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EditPlayerComponent } from '../../dialogs/edit-player/edit-player.component';
 
 export interface Player {
   playerid: string;
@@ -22,6 +23,7 @@ export interface Player {
 })
 export class PlayersComponent implements OnInit {
   durationInSeconds = 2;
+  selectedVal: any = "";
 
   displayedColumns: string[] = ['playerid', 'name', 'email', 'phone', 'delete'];
   dataSource = new ExampleDataSource([]);
@@ -48,6 +50,7 @@ export class PlayersComponent implements OnInit {
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret',
       'Authorization': 'Bearer ' + this.authUser.getJwtToken()
      };
+     this.selectedVal = value;
     await this.http.get<any>('https://kw31bx8r49.execute-api.us-east-1.amazonaws.com/players/all/' + value, { headers })
             .toPromise()
             .then(data => {
@@ -67,17 +70,50 @@ export class PlayersComponent implements OnInit {
     });
   }
 
-  async deletePlayer(playerid: any) {
-    const headers = { 'headers': {'Access-Control-Allow-Origin': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com',
+  async deletePlayer(playerid: any, name: any) {
+    const headers = { 'Access-Control-Allow-Origin': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com',
       'Access-Control-Allow-Methods': 'http://localhost:4200, https://master.d4pza09saklb.amplifyapp.com',
       'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret',
       'Authorization': 'Bearer ' + this.authUser.getJwtToken()
-    }};
-    const body = { playerid: playerid };
-    this.http.delete('https://kw31bx8r49.execute-api.us-east-1.amazonaws.com/players/' + playerid, headers)
-        .subscribe(() => {
-          console.log("fuck you");
-        });
+     };
+    const body = { playerid: playerid, sort: name[0] };
+    this.http.put<any>('https://kw31bx8r49.execute-api.us-east-1.amazonaws.com/players/delete', body, { headers })
+            .subscribe(data => {
+              if(data == '200') {
+                this.dialog.closeAll();
+                this.snackBar.open("Successfully Deleted Player", "Okay", {
+                  duration: this.durationInSeconds * 1000,
+                  panelClass: ['green-snackbar']
+                });
+
+                for(var i = 0; i < this.players.length; i++) {
+                  var player = this.players[i];
+                  if(player.playerid == playerid) {
+                    var index = this.players.indexOf(player);
+                    this.players.splice(index, 1);
+                  }
+                }
+                this.dataSource.setData(this.players);
+              }
+              else {
+                this.dialog.closeAll();
+                this.snackBar.open("Could Not Add Player", "Okay", {
+                  duration: this.durationInSeconds * 1000,
+                  panelClass: ['red-snackbar']
+                });
+              }
+            });
+  }
+
+  editPlayer(row: any) {
+    const dialogRef = this.dialog.open(EditPlayerComponent, {
+      width: '250px',
+      data: {playerid: row.playerid, name: row.name, email: row.email, phone: row.phone},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
 }

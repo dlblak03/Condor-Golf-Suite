@@ -26,6 +26,7 @@ import { LoaderComponent } from './templates/loader/loader.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
 import { SuccessComponent } from './snackbars/success/success.component';
+import { EditPlayerComponent } from './dialogs/edit-player/edit-player.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { SuccessComponent } from './snackbars/success/success.component';
     TopBarComponent,
     LoaderComponent,
     AddPlayerComponent,
-    SuccessComponent
+    SuccessComponent,
+    EditPlayerComponent
   ],
   imports: [
     BrowserModule,
