@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatSnackBarModule,
     MatButtonToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule
   ],
   exports: [
     MatCardModule,
@@ -53,7 +55,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatSnackBarModule,
     MatButtonToggleModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule
   ]
 })
 export class AngularMaterialModule { }

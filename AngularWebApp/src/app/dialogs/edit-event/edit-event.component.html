@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Edit Event</h1>
+<form #user="ngForm" (ngSubmit)="updateEvent(user);">
+<div mat-dialog-content>
+
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;" style="display: none;">
+    <mat-label>Eventid</mat-label>
+    <input matInput type="text" name="eventid" ngModel required #eventid="ngModel" [ngModel]="data.eventid">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" name="name" ngModel required #name="ngModel" [ngModel]="data.name">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" style="width: 100%;">
+    <mat-label>Type</mat-label>
+    <input matInput type="text" name="type" ngModel #type="ngModel" [ngModel]="data.type">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Player Count</mat-label>
+    <input matInput type="text" name="playercount" ngModel required #playercount="ngModel" [ngModel]="data.playercount">
+  </mat-form-field>
+  <mat-form-field appearance="legacy" color="accent" [hideRequiredMarker]="true" style="width: 100%;">
+    <mat-label>Date</mat-label>
+    <input matInput type="text" name="date" ngModel required #date="ngModel" [ngModel]="data.date">
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button  mat-raised-button color="accent" style="color: white; width: 100%;" [disabled]="!user.form.valid">Update</button>
+</div>
+</form>

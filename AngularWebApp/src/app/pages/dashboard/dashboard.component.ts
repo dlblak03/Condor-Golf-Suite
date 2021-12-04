@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddPlayerComponent } from '../../dialogs/add-player/add-player.component';
 import { DashboardService } from './dashboard.service';
+import { AddEventComponent } from '../../dialogs/add-event/add-event.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -55,6 +56,12 @@ export class DashboardComponent implements OnInit {
 
   openDialog(): void {
     this.dialog.open(AddPlayerComponent, {
+      width: '325px'
+    });
+  }
+
+  openEventDialog(): void {
+    this.dialog.open(AddEventComponent, {
       width: '325px'
     });
   }
