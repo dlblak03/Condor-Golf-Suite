@@ -14,10 +14,78 @@
     <br>
 
     <div class="main-content">
+      <div class="row">
+        <div class="col">
+          <mat-card style="box-shadow: none; border: solid 1px #e2e2e2; min-height: 840px;">
 
+            <div class="row" style="padding: 0px 15px;">
+              <div class="col" class="">
+                <table mat-table [dataSource]="dataSource" >
+
+                  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="eventid">
+                    <th mat-header-cell *matHeaderCellDef> Eventid </th>
+                    <td mat-cell *matCellDef="let element"> {{element.eventid}} </td>
+                  </ng-container>
+
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                  </ng-container>
+
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="playercount">
+                    <th mat-header-cell *matHeaderCellDef> Player Count </th>
+                    <td mat-cell *matCellDef="let element"> {{element.playercount}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element" style="color: red; cursor: pointer;" (click)="deleteEvent(element.eventid)"> <mat-icon>close</mat-icon> </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="cursor: pointer;" (click)="editEvent(row)"></tr>
+                </table>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
     </div>
 
   </div>
-
-  
+  <div class="menu-widget-wrapper">
+    <button mat-fab color="primary" [matMenuTriggerFor]="aboveMenu" style="margin-top: 10px;">
+      <mat-icon>add</mat-icon>
+    </button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above" xPosition="before">
+    <!-- <button mat-menu-item color="accent">
+      <mat-icon color="primary">date_range</mat-icon>
+      <span>Create Tee Time</span>
+    </button> -->
+    <button mat-menu-item color="accent" (click)="openAddEvent()">
+      <mat-icon color="primary">group</mat-icon>
+      <span>Add Events</span>
+    </button>
+    <!-- <button mat-menu-item color="accent">
+      <mat-icon color="primary">event</mat-icon>
+      <span>Add Event</span>
+    </button> -->
+  </mat-menu>
+  </div>
 </div>

@@ -1,0 +1,35 @@
+table {
+  width: 100%;
+}
+
+.toggle-group {
+  flex-grow: 1;
+}
+
+.toggle-group-item {
+  flex-grow: 1;
+  max-height: 32px;
+  padding: 2px;
+}
+
+.mat-column-playerid {
+  width: 30% !important;
+}
+
+.mat-column-name {
+  width: 25% !important;
+}
+
+.mat-column-email {
+  width: 25% !important;
+}
+
+.mat-column-phone {
+  width: 20% !important;
+}
+
+.menu-widget-wrapper {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}

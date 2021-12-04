@@ -27,6 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddPlayerComponent } from './dialogs/add-player/add-player.component';
 import { SuccessComponent } from './snackbars/success/success.component';
 import { EditPlayerComponent } from './dialogs/edit-player/edit-player.component';
+import { AddEventComponent } from './dialogs/add-event/add-event.component';
+import { EditEventComponent } from './dialogs/edit-event/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { EditPlayerComponent } from './dialogs/edit-player/edit-player.component
     LoaderComponent,
     AddPlayerComponent,
     SuccessComponent,
-    EditPlayerComponent
+    EditPlayerComponent,
+    AddEventComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
